@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset = "UTF-8">
+  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+  <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+  <title>
+    AJAX
+  </title>
+</head>
+<body>
+  <h1>
+   AJAX Page
+  </h1>
+  <p id = "name">
+    Hello {{.Name}}
+  </p>
+  <ul id = "food">
+    Nice {{range .Food}}
+    <li>
+      {{.}}
+    </li>
+    {{end}}
+  </ul>  
+
+  <script src = "https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $.getJSON("/api", {}, function(data) {
+      var x = $("#name").append(data.Name);
+
+      for (var i = 0; i < data.Food.length; i++) {
+        $("#food").append("<li>" + data.Food[i] + "</li>")
+      }
+    }, "json");
+  </script>
+</body>
+</html>
