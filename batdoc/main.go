@@ -35,6 +35,17 @@ func main() {
 		},
 	)
 
+	docS := uadmin.Schema["document"]
+	docS.ListModifier = DocumentListFilter
+	uadmin.Schema["document"] = docS
+
 	uadmin.SiteName = "Bat Doc"
 	uadmin.StartServer()
+}
+
+func DocumentListFilter(s *uadmin.ModelSchema, u *uadmin.User) (string, []interface{}) {
+	if !u.Admin {
+		return "user_id = ?", []interface{}{u.ID}
+	}
+	return "", []interface{}{}
 }
