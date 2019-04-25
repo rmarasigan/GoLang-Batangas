@@ -12,7 +12,7 @@ type Document struct {
 	Name        string
 	File        string `uadmin:"file"`
 	Description string `uadmin:"html"`
-	RawText     string `uadmin:"list_exclude"`
+	RawText     string `uadmin:"list_exclude;hidden" sql:"type:text;"`
 	Format      Format `uadmin:"list_exclude"`
 	Folder      Folder `uadmin:"filter"`
 	FolderID    uint
@@ -37,12 +37,13 @@ func (d *Document) Save() {
 	}
 	uadmin.Save(d)
 	if docChange {
-		ver := DocumentVersion{}
+		ver := &DocumentVersion{}
 		ver.Date = time.Now()
 		ver.DocumentID = d.ID
 		ver.File = d.File
 		ver.Number = uadmin.Count([]DocumentVersion{}, "document_id = ?", d.ID) + 1
-		uadmin.Save(&ver)
+		ver.Format = d.Format
+		ver.Save()
 
 		if newDoc {
 			user := uadmin.User{}

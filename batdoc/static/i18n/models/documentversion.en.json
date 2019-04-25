@@ -42,6 +42,13 @@
       "pattern_msg": "",
       "err_msg": {},
       "Choices": {}
+    },
+    "RawText": {
+      "display_name": "Raw Text",
+      "help": "",
+      "pattern_msg": "",
+      "err_msg": {},
+      "Choices": {}
     }
   }
 }

@@ -14,6 +14,7 @@ type DocumentVersion struct {
 	Number     int    `uadmin:"help:version number"`
 	Date       time.Time
 	Format     Format
+	RawText    string `uadmin:"list_exclude;hidden" sql:"type:text;"`
 }
 
 func (d DocumentVersion) String() string {
@@ -22,4 +23,26 @@ func (d DocumentVersion) String() string {
 
 func (DocumentVersion) HideInDashboard() bool {
 	return true
+}
+
+func (d *DocumentVersion) Save() {
+	newDoc := false
+	uadmin.Trail(uadmin.DEBUG, "DocumentVersion.ID = %d", d.ID)
+	if d.ID == 0 {
+		newDoc = true
+	}
+	uadmin.Save(d)
+
+	// Run Document analysis in a separate gorotine
+	if newDoc {
+		go func() {
+			// Get Raw Text
+			uadmin.Trail(uadmin.DEBUG, "Getting Raw Text")
+			d.RawText = d.Format.GetRawText(d)
+			uadmin.Save(d)
+			uadmin.Preload(d)
+			d.Document.RawText = d.RawText
+			uadmin.Save(&d.Document)
+		}()
+	}
 }

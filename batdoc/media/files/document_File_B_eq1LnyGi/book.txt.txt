@@ -1,0 +1,6079 @@
+Digital
+Computer
+Electronics
+
+Albert Paul Malvino, Ph.D.
+Jerald A. Brown
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+GLENCOE
+
+McGraw-Hill
+New York, New York Columbus, Ohio Woodland Hills, California Peoria, Illinois
+
+ 
+
+ 
+
+ 
+ 
+
+This textbook was prepared with the assistance of Publishing Advisory Service.
+
+LSI circuit photo: Manfred Kage/Peter Arnold Inc.
+
+To my wife, Joanna, who encourages me to write.
+And to my daughters, Joanna, Antonia, Lucinda,
+Patricia, and Miriam, who keep me young.
+
+—A.P.M.
+
+...to my wife Vickie
+dearest friend
+fellow adventurer
+love of my life
+
+—J.A.B.
+
+Library of Congress Cataloging-in-Publication Data
+
+Malvino, Albert Paul.
+Digital computer electronics / Albert Paul Malvino, Jerald A.
+Brown. — 3rd ed.
+p. cm.
+Includes index.
+ISBN 0-02-800594-5 (hardcover)
+1. Electronic digital computers. 2. Microcomputers. 3. Intel
+8085 (Microprocessor) |. Brown, Jerald A. Il. Title.
+TK7888.3.M337 1993
+621.39'16—dc20 92-5895
+CIP
+
+Digital Computer Electronics, Third Edition
+
+Imprint 1999
+
+Copyright © 1993, 1983 by Glencoe/McGraw-Hill. All rights reserved. Copyright © 1983, 1977 by
+McGraw-Hill, Inc. All rights reserved. Printed in the United States of America. Except as
+permitted under the United States Copyright Act, no part of this publication may be reproduced
+or distributed in any form or by any means, or stored in a database or retrieval system, without
+prior written permission of the publisher.
+
+ISBN 0-02-800594-5
+Printed in the United States of America.
+
+456789101112 004/043 0302010099
+es
+Contents
+
+PREFACE vi
+
+Digital Principles 1
+
+CHAPTER 1. NUMBER SYSTEMS AND
+CODES 1
+
+1-1. Decimal Odometer 1-2. Binary Odometer
+
+1-3. Number Codes 1-4. Why Binary Numbers Are
+Used 1-5. Binary-to-Decimal Conversion
+
+1-6. Microprocessors 1-7, Decimal-to-Binary
+Conversion 1-8. Hexadecimal Numbers
+
+1-9. Hexadecimal-Binary Conversions
+
+1-10. Hexadecimal-to-Decimal Conversion
+
+I-f I. Decimal-to-Hexadecimal Conversion
+
+1-12, BCD Numbers 1-13. The ASCII Code
+
+CHAPTER 2. GATES 19
+
+2-1. Inverters 2-2. oR Gates
+2-4. Boolean Algebra
+
+2-3. AND Gates
+
+CHAPTER 3. MORE LOGIC GATES 32
+
+3-1. NOR Gates 3-2. De Morgan’s First Theorem
+3-3. NAND Gates 3-4. De Morgan’s Second Theorem
+3-5. EXCLUSIVE-OR Gates 3-6, The Controlled
+Inverter 3-7. EXCLUSIVE-NOR Gates
+
+CHAPTER 4. TTL CIRCUITS 48
+
+4-2. 7400 Devices
+4-4. TTL Overview
+4-6. Open-Collector Gates
+
+4-|. Digital Integrated Circuits
+4-3. TTL Characteristics
+4-5. AND-OR-INVERT Gates
+4-7. Multiplexers
+
+CHAPTER 5. BOOLEAN ALGEBRA AND
+KARNAUGH MAPS 64
+
+5-1. Boolean Relations 5-2. Sum-of-Products Method
+5-3. Algebraic Simplification 5-4. Karnaugh Maps
+5-5. Pairs, Quads, and Octets 5-6. Karnaugh
+Simplifications 5-7. Don’t-Care Conditions
+
+ 
+
+CHAPTER 6. ARITHMETIC-LOGIC UNITS
+79
+
+6-1. Binary Addition 6-2. Binary Subtraction
+6-3. Half Adders 6-4. Full Adders 6-5. Binary
+Adders 6-6. Signed Binary Numbers 6-7. 2’s
+
+Complement 6-8. 2°s-Complement Adder-Subtracter
+
+CHAPTER 7. FLIP-FLOPS 90
+
+7-1. RS Latches 7-2. Level Clocking 7-3. D Latches
+7-4. Edge-Triggered D Flip-Flops 7-5. Edge-Triggered
+JK Flip-Flops 7-6. JK Master-Slave Flip-Flop
+
+CHAPTER 8. REGISTERS AND
+
+COUNTERS 106
+
+8-1. Buffer Registers 8-2. Shift Registers
+
+8-3. Controlled Shift Registers 8-4. Ripple Counters
+8-5. Synchronous Counters 8-6. Ring Counters
+8-7. Other Counters 8-8. Three-State Registers
+
+8-9. Bus-Organized Computers
+
+CHAPTER 9. MEMORIES — 130
+
+9-1. ROMs 9-2. PROMs and EPROMs
+9-4. A Small TTL Memory
+Addresses
+
+PART 2 |
+
+SAP (Simple-as-Possible)
+Computers 140
+
+CHAPTER 10. SAP-1 140
+
+10-1. Architecture 10-2. Instruction Set
+
+10-3. Programming SAP-1 10-4. Fetch Cycle
+
+10-5. Execution Cycle 10-6. The SAP-1
+Microprogram 10-7. The SAP-1 Schematic Diagram
+10-8. Microprogramming
+
+9-3. RAMs
+9-5. Hexadecimal
+
+CHAPTER 11. SAP-2 173
+
+11-1. Bidirectional Registers 11-2. Architecture
+11-3. Memory-Reference Instructions 11-4. Register
+Instructions 11-5. Jump and Call Instructions
+
+11-6. Logic Instructions 11-7. Other Instructions
+11-8. SAP-2 Summary
+ 
+
+CHAPTER 12. SAP-3 195
+
+12-1. Programming Model 12-2. MOV and MVI
+12-3. Arithmetic Instructions 12-4. Increments,
+Decrements, and Rotates 12-5. Logic Instructions
+12-6. Arithmetic and Logic Immediates 12-7. Jump
+Instructions 12-8. Extended-Register Instructions
+12-9. Indirect Instructions 12-10. Stack Instructions
+
+PART 3
+
+Programming Popular
+Microprocessors 213
+
+CHAPTER 13. INTRODUCTION TO
+MICROPROCESSORS = 213
+
+13-1. Computer Hardware
+
+13-2. Definition of a Microprocessor
+
+13-3. Some Common Uses for Microprocessors
+13-4. Microprocessors Featured in This Text
+13-5, Access to Microprocessors
+
+CHAPTER 14. PROGRAMMING AND
+LANGUAGES 216
+
+14-1. Relationship between Electronics and Programming
+14-2. Programming 14-3. Fundamental Premise
+
+14-4. Flowcharts 14-5. Programming Languages
+
+14-6. Assembly Language 14-7. Worksheets
+
+CHAPTER 15. SYSTEM OVERVIEW 224
+
+New Concepts 15-1. Computer Architecture
+
+15-2. Microprocessor Architecture
+
+Specific Microprocessor Families
+
+15-3. 6502 Family 15-4. 6800/6808 Family
+
+15-5. 8080/8085/Z80 Family 15-6. 8086/8088 Family
+
+CHAPTER 16. DATA TRANSFER
+INSTRUCTIONS 240
+
+New Concepts 16-1. CPU Control Instructions
+
+16-2. Data Transfer Instructions
+
+Specific Microprocessor Families
+
+16-3. 6502 Family 16-4. 6800/6808 Family
+
+16-5. 8080/8085/Z80 Family 16-6. 8086/8088 Family
+
+CHAPTER 17. ADDRESSING MODES—I 263
+
+New Concepts 17-1. What Is an Addressing Mode?
+17-2. The Paging Concept
+
+17-3. Basic Addressing Modes
+
+Specific Microprocessor Families — 17-4. 6502 Family
+17-5. 6800/6808 Family 17-6. 8080/8085/Z80 Family
+17-7. 8086/8088 Family
+
+iv Contents
+
+CHAPTER 18. ARITHMETIC AND FLAGS
+270
+
+New Concepts 18-1. Microprocessors and Numbers
+
+18-2. Arithmetic Instructions 18-3. Flag Instructions
+
+Specific Microprocessor Families 18.4 6502 Family
+18-5. 6800/6808 Family 18-6. 8080/8085/Z80 Family
+18-7. 8086/8088 Family
+
+CHAPTER 19. LOGICAL INSTRUCTIONS
+305
+
+New Concepts 19-1. The AND Instruction
+
+19-2. The or Instruction
+
+19-3. The EXCLUSIVE-OR (EOR, XOR) Instruction
+
+19-4. The NoT Instruction
+
+19-5. The NEG (NEGate) Instruction
+
+Specific Microprocessor Families 19-6. 6502 Family
+19-7. 6800/6808 Family 19-8. 8080/8085/Z80 Family
+19-9, 8086/8088 Family
+
+CHAPTER 20. SHIFT AND ROTATE
+INSTRUCTIONS = 319
+
+New Concepts 20-1. Rotating
+20-3. An Example Specific Microprocessor Families
+20-4. 6502 Family 20-5. 6800/6808 Family
+
+20-6. 8080/8085/Z80 Family 20-7. 8086/8088 Family
+
+20-2. Shifting
+
+CHAPTER 21. ADDRESSING MODES—II_ 329
+
+New Concepts 21-1. Advanced Addressing Modes
+Specific Microprocessor Families 21-2. 6502 Family
+21-3. 6800/6808 Family 21-4. 8080/8085/Z80 Family
+21-5. 8086/8088 Family
+
+CHAPTER 22. BRANCHING AND LOOPS 342
+
+New Concepts 22-1. Unconditional Jumps
+
+22-2. Conditional Branching
+
+22-3. Compare and Test Instructions
+
+22-4. Increment and Decrement Instructions
+
+22-5. Nested Loops
+
+Specific Microprocessor Families — 22-6. 6502 Family
+22-7. 6800/6808 Family 22-8. 8080/8085/Z80 Family
+22-9. 8086/8088 Family
+
+CHAPTER 23. SUBROUTINE AND STACK
+INSTRUCTIONS 363
+
+New Concepts 23-1. Stack and Stack Pointer
+
+23-2. Branching versus Subroutines
+
+23-3. How Do Subroutines Return?
+
+23-4. Pushing and Popping Registers
+
+Specific Microprocessor Families 23-5. 6502 Family
+23-6. 6800/6808 Family 23-7. 8080/8085/Z80 Family
+24-8. 8086/8088 Family
+PART 4
+
+Microprocessor Instruction
+Set Tables 379
+
+A.
+Expanded Table of 8085/8080 and Z80 (8080 Subset)
+Instructions Listed by Category 381
+
+Mini Table of 8085/8080 and Z80 (8080 Subset)
+Instructions Listed by Category 410
+
+Condensed Table of 8085/8080 and Z80 (8080)
+Instructions Listed by Category 415
+
+Condensed Table of 8085/8080 and Z80 (8080 Subset)
+Instructions Listed by Op Code 417
+
+Condensed Table of 8085/8080 and 7.80 (8080 Subset)
+Instructions Listed Alphabetically by 8085/8080
+Mnemonic 419
+
+Condensed Table of 8085/8080 and Z80 (8080 Subset)
+Instructions Listed Alphabetically by Z80 Mnemonic
+421
+
+B.
+Expanded Table of 6800 Instructions Listed by Category
+422
+
+Short Table of 6800 Instructions Listed Alphabetically
+434
+
+Short Table of 6800 Instructions Listed by Category
+437
+
+Condensed Table of 6800 Instructions Listed by Category
+44]
+
+Condensed Table of 6800 Instructions Listed
+Alphabetically 443
+
+Condensed Table of 6800 Instructions Listed by Op Code
+444
+
+C.
+Expanded Table of 8086/8088 Instructions Listed by
+Category 445
+
+Condensed Table of 8086/8088 Instructions Listed by
+Category 465
+
+Condensed Table of 8086/8088 Instructions Listed
+Alphabetically 469
+
+Dz
+Expanded Table of 6502 Instructions Listed by Category
+47]
+
+Short Table of 6502 Instructions Listed by Category
+478
+
+Condensed Table of 6502 Instructions Listed by Category
+480
+
+Condensed Table of 6502 Instructions Listed
+Alphabetically 481
+
+Condensed Table of 6502 Instructions Listed by Op Code
+482
+
+APPENDIXES 485
+
+1. The Analog Interface 2. Binary-Hexadecimal-
+Decimal Equivalents 3. 7400 Series TTL
+
+4. Pinouts and Function Tables 5. SAP-1 Parts List
+
+6. 8085 Instructions 7. Memory Locations: Powers of 2
+8. Memory Locations: 16K and 8K Intervals
+
+9. Memory Locations: 4K Intervals 10. Memory
+Locations: 2K Intervals 11. Memory Locations: 1K
+Intervals 12. Programming Models
+
+ANSWERS TO ODD-NUMBERED PROBLEMS
+513
+
+INDEX 519
+
+Contents U
+
+ 
+ 
+
+a
+Preface
+
+Textbooks on microprocessors are sometimes hard to un-
+derstand. This text attempts to present the various aspects
+of microprocessors in ways that are understandable and
+interesting. The only prerequisite to using this textbook is
+an understanding of diodes and transistors.
+
+A unique aspect of this text is its wide range. Whether
+you are interested in the student-constructed SAP (simple-
+as-possible) microprocessor, the 6502, the 6800/6808, the
+8080/8085/Z80, or the 8086/8088, this textbook can meet
+your needs.
+
+The text is divided into four parts. These parts can be
+used in different ways to meet the needs of a wide variety
+of students, classrooms, and instructors.
+
+Part 1, Digital Principles, is composed of Chapters | to
+9. Featured topics include number systems, gates, boolean
+algebra, flip-flops, registers, counters, and memory. This
+information prepares the student for the microprocessor
+sections which follow.
+
+Part 2, which consists of Chapters 10 to 12, presents the
+SAP (simple-as-possible) microprocessor. The student con-
+structs this processor using digital components. The SAP
+processor contains the most common microprocessor func-
+tions. It features an instruction set which is a subset of that
+of the Intel 8085—leading naturally to a study of that
+microprocessor.
+
+Part 3, Programming Popular Microprocessors (Chapters
+13 to 23), simultaneously treats the MOS/Rockwell 6502,
+the Motorola 6800/6808, the Intel 8080/8085 and Zilog
+Z80, and the 16-bit Intel 8086/8088. Each chapter is divided
+into two sections. The first section presents new concepts;
+second section applies the new concepts to each micropro-
+cessor family. Discussion, programming examples, and
+problems are provided. The potential for comparative study
+is excellent.
+
+This part of the text takes a strong programming approach
+to the study of microprocessors. Study is centered around
+the microprocessor’s instruction set and programming model.
+
+The 8-bit examples and homework problems can be per-
+formed by using either hand assembly or cross-assemblers.
+The 16-bit 8086/8088 examples and problems can be per-
+formed by using either an assembler or the DOS DEBUG
+utility.
+
+Part 4 is devoted to the presentation of the instruction
+sets of each microprocessor family in table form. Several
+tables are provided for each microprocessor family, per-
+mitting instructions to be looked up alphabetically, by op
+code, or by functional category, with varying levels of
+detail. The same functional categories are correspondingly
+used in the chapters in Part 3. This coordination between
+parts makes the learning process easier and more enjoyable.
+
+Additional reference tables are provided in the appen-
+dixes. Answers to odd-numbered problems for Chapters |
+to 16 follow the appendixes.
+
+A correlated laboratory manual, Experiments for Digital
+Computer Electronics by Michael A. Miller, is available
+for use with this textbook. It contains experiments for every
+part of the text. It also includes programming problems for
+each of the featured microprocessors.
+
+A teacher’s manual is available which contains answers
+to all of the problems and programs for every micropro-
+cessor. In addition, a diskette (MS-DOS 360K 5'%4-inch
+diskette) containing cross-assemblers is included in the
+teacher’s manual.
+
+Special thanks to Brian Mackin for being such a patient
+and supportive editor. To Olive Collen for her editorial
+work. To Michael Miller for his work on the lab manual.
+And to Thomas Anderson of Speech Technologies Inc. for
+the use of his cross-assemblers. Thanks also to reviewers
+Lawrence Fryda, Hlinois State University; Malachi Mc-
+Ginnis, ITT Technical Institute, Garland Texas; and Ben-
+jamin Suntag.
+
+Albert Paul Malvino
+Jerald A. Brown
+
+A man of true science uses but few hard words,
+and those only when none other will answer his purpose;
+whereas the smatterer in science thinks that
+by mouthing hard words he understands hard things.
+
+Herman Melville
+PART 1 |
+DIGITAL PRINCIPLES
+
+ 
+
+)>-
+
+ 
+
+ 
+
+ 
+
+1
+
+{)-
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+NUMBER SYSTEMS
+AND CODES
+
+Modern computers don’t work with decimal numbers.
+Instead, they process binary numbers, groups of Os and |s.
+Why binary numbers? Because electronic devices are most
+reliable when designed for two-state (binary) operation.
+This chapter discusses binary numbers and other concepts
+needed to understand computer operation.
+
+1-1 DECIMAL ODOMETER
+
+René Descartes (1596-1650) said that the way to learn a
+new subject is to go from the known to the unknown, from
+the simple to the complex. Let’s try it.
+
+The Known
+
+Everyone has seen an odometer (miles indicator) in action.
+When a car is new, its odometer starts with
+
+00000
+
+After 1 mile the reading becomes
+
+00001
+
+Successive miles produce 00002, 00003, and so on, up to
+
+00009
+
+A familiar thing happens at the end of the tenth mile.
+When the units wheel turns from 9 back to 0, a tab on this
+wheel forces the tens wheel to advance by |. This is why
+the numbers change to
+
+00010
+
+Reset-and-Carry
+
+The units wheel has reset to 0 and sent a carry to the tens
+wheel. Let’s call this familiar action reset-and-carry.
+
+The other wheels also reset and carry. After 999 miles
+the odometer shows
+
+00999
+
+What does the next mile do? The units wheel resets and
+carries, the tens wheel resets and carries, the hundreds
+wheel resets and carries, and the thousands wheel advances
+by 1, to get
+
+01000
+
+Digits and Strings
+
+The numbers on each odometer wheel are called digits.
+The decimal number system uses ten digits, 0 through 9.
+In a decimal odometer, each time the units wheel runs out
+of digits, it resets to 0 and sends a carry to the tens wheel.
+When the tens wheel runs out of digits, it resets to 0 and
+sends a carry to the hundreds wheel. And so on with the
+remaining wheels.
+
+One more point. A string is a group of characters (either
+letters or digits) written one after another. For instance,
+734 is a string of 7, 3, and 4. Similarly, 2C8A is a string
+of 2, C, 8, and A.
+
+1-2 BINARY ODOMETER
+
+Binary means two. The binary number system uses only
+two digits, O and 1. Ali other digits (2 through 9) are
+thrown away. In other words, binary numbers are strings
+of Os and Is.
+
+An Unusual Odometer
+
+Visualize an odometer whose wheels have only two digits,
+0 and 1. When each wheel turns, it displays 0, then 1, then
+
+I
+
+ 
+
+ 
+
+ 
+ 
+
+back to 0, and the cycle repeats. Because each wheel has
+only two digits, we call this device a binary odometer.
+In a car a binary odometer starts with
+
+0000 (zero)
+After | mile, it indicates
+
+0001 (one)
+
+The next mile forces the units wheel to reset and carry; so
+the numbers change to
+
+0010 (two)
+The third mile results in
+
+0011 (three)
+
+What happens after 4 miles? The units wheel resets and
+carries, the second wheel resets and carries, and the third
+wheel advances by 1. This gives
+
+0100 (four)
+Successive miles produce
+
+0101 (five)
+0110 (six)
+O111 (seven)
+
+After 8 miles, the units wheel resets and carries, the
+second wheel resets and carries, the third wheel resets and
+carries, and the fourth wheel advances by 1. The result is
+
+1000 (eight)
+The ninth mile gives
+
+1001 (nine)
+and the tenth mile produces
+1010 (ten)
+
+(Try working out a few more readings on your own.)
+
+You should have the idea by now. Each mile advances
+the units wheel by 1. Whenever the units wheel runs out
+of digits, it resets and carries. Whenever the second wheel
+runs out of digits, it resets and carries. And so for the other
+wheels.
+
+Binary Numbers
+A binary odometer displays binary numbers, strings of Os
+
+and ls. The number 0001 stands for 1, 0010 for 2, 0011
+
+2 Digital Computer Electronics
+
+for 3, and so forth. Binary numbers are long when large
+amounts are involved. For instance, 101010 represents
+decimal 42. As another example, 111100001111 stands for
+decimal 3,855.
+
+Computer circuits are like binary odometers; they count
+and work with binary numbers. Therefore, you have to
+learn to count with binary numbers, to convert them to
+decimal numbers, and to do binary arithmetic. Then you
+will be ready to understand how computers operate.
+
+A final point. When a decimal odometer shows 0036,
+we can drop the leading Os and read the number as 36.
+Similarly, when a binary odometer indicates 0011, we can
+drop the leading Os and read the number as 11. With the
+leading Os omitted, the binary numbers are 0, 1, 10, 11,
+100, 101, and so on. To avoid confusion with decimal
+numbers, read the binary numbers like this: zero, one, one-
+zero, one-one, One-zero-zero, one-zero-one, etc.
+
+1-3 NUMBER CODES
+
+People used to count with pebbles. The numbers 1, 2, 3
+looked like @, @@, @@@. Larger numbers were worse:
+seven appeared as @@@OOOO.
+
+Codes
+
+From the earliest times, people have been creating codes
+that allow us to think, calculate, and communicate. The
+decimal numbers are an example of a code (see Table
+1-1). It’s an old idea now, but at the time it was as
+revolutionary; 1 stands for @, 2 for @@, 3 for @@@,
+and so forth.
+
+Table 1-1 also shows the binary code. 1 stands for @, 10
+for @@, 11 for @@@, and so on. A binary number and a
+decimal number are equivalent if each represents the same
+amount of pebbles. Binary 10 and decimal 2 are equivalent
+because each represents @@. Binary 101 and decimal 5 are
+equivalent because each stands for @@@@@.
+
+TABLE 1-1. NUMBER CODES
+
+ 
+
+ 
+
+Decimal Pebbles Binary
+0 None 0
+1 @ 1
+2 ee 10
+3 eee 1
+4 e000 100
+5 ©0000 101
+6 000000 110
+7 0000000 111
+8 00000000 1000
+9 000000000 1001
+
+ 
+Equivalence is the common ground between us and
+computers; it tells us when we’re talking about the same
+thing. If a computer comes up with a binary answer of 101,
+equivalence means that the decimal answer is 5. As a start
+to understanding computers, memorize the binary-decimal
+equivalences of Table 1-1.
+
+ 
+
+EXAMPLE 1-1
+
+Figure 1-la shows four light-emitting diodes (LEDs). A
+dark circle means that the LED is off; a light circle means
+it’s on. To read the display, use this code:
+
+OO
+
+fa) (b}
+Fig. 1-1 LED display of binary numbers.
+
+   
+
+LED Binary
+
+Off 0
+On 1
+
+What binary number does Fig. 1-la indicate? Fig. 1-15?
+
+SOLUTION
+
+ 
+
+Figure 1-la shows off-off-on-on. This stands for binary
+0011, equivalent to decimal 3.
+
+Figure 1-1 is off-on-off-on, decoded as binary 0101 and
+equivalent to decimal 5.
+
+ 
+
+EXAMPLE 1-2
+
+A binary odometer has four wheels. What are the successive
+binary numbers?
+
+SOLUTION
+
+ 
+
+As previously discussed, the first eight binary numbers are
+0000, 0001, 0010, 0011, 0100, 0101, O110, and 0111. On
+the next count, the three wheels on the right reset and calry;
+the fourth wheel advances by one. So the next eight numbers
+are 1000, 1001, 1010, 1011, 1100, 1101, 1110, and 1111.
+The final reading of 1111 is equivalent to decimal 15. The
+next mile resets all wheels to 0, and the cycle repeats.
+Being able to count in binary from 0000 to 1111 is
+essential for understanding the operation of computers.
+
+TABLE 1-2. BINARY-TO-DECIMAL
+
+ 
+
+ 
+
+EQUIVALENCES
+Decimal Binary Decimal Binary
+0 0000 8 1000
+1 0001 9 1001
+2 0010 10 1010
+3 0011 11 1011
+4 0100 12 1100
+5 0101 13 1101
+6 0110 14 1110
+7 o1il 15 111]
+
+ 
+
+ 
+
+Therefore, you should memorize the equivalences of Table
+1-2.
+
+ 
+
+1-4 WHY BINARY NUMBERS
+ARE USED
+
+The word ‘‘computer’’ is misleading because it suggests a
+machine that can solve only numerical problems. But a
+computer is more than an automatic adding machine. It can
+play games, translate languages, draw pictures, and so on.
+To suggest this broad range of application, a computer is
+often referred to as a data processor.
+
+Program and Data
+
+Data means names, numbers, facts, anything needed to
+work out a problem. Data goes into a computer, where it
+is processed or manipulated to get new information. Before
+it goes into a computer, however, the data must be coded
+in binary form. The reason was given earlier: a computer’s
+circuits can respond only to binary numbers.
+
+Besides the data, someone has to work out a program,
+a list of instructions telling the computer what to do. These
+instructions spell out each and every step in the data
+processing. Like the data, the program must be coded in
+binary form before it goes into the computer.
+
+So the two things we must input to a computer are the
+program and the data. These are stored inside the computer
+before the processing begins. Once the computer run starts,
+each instruction is executed and the data is processed.
+
+Hardware and Software
+
+The electronic, magnetic, and mechanical devices of a
+computer are known as hardware. Programs are called
+software. Without software, a computer is a pile of ‘‘dumb’’
+metal.
+
+Chapter 1 Number Systems and Codes 3
+
+ 
+
+ 
+
+ 
+ 
+
+An analogy may help. A phonograph is like hardware
+and records are like software. The phonograph is useless
+without records. Furthermore, the music you get depends
+on the record you play. A similar idea applies to computers.
+A computer is the hardware and programs are the software.
+The computer is useless without programs. The program
+stored in the computer determines what the computer will
+do; change the program and the computer processes the
+data in a different way.
+
+Transistors
+
+Computers use integrated circuits (ICs) with thousands of
+transistors, either bipolar or MOS. The parameters (B,.,
+Teo. &ms etc.) can vary more than 50 percent with temperature
+change and from one transistor to the next. Yet these
+computer ICs work remarkably well despite the transistor
+variations. How is it possible?
+
+The answer is two-state design, using only two points
+on the load line of each transistor. For instance, the common
+two-state design is the cutoff-saturation approach; each
+transistor is forced to operate at either cutoff or saturation.
+When a transistor is cut off or saturated, parameter variations
+have almost no effect. Because of this, it’s possible to
+design reliable two-state circuits that are almost independent
+of temperature change and transistor variations.
+
+Transistor Register
+
+Here’s an example of two-state design. Figure 1-2 shows
+a transistor register. (A register is a string of devices that
+store data.) The transistors on the left are cut off because
+the input base voltages are 0 V. The dark shading symbolizes
+the cutoff condition. The two transistors on the right have
+base drives of 5 V.
+
+The transistors operate at either saturation or cutoff. A
+base voltage of 0 V forces each transistor to cut off, while
+a base voltage of 5 V drives it into saturation. Because of
+this two-state action, each transistor stays in a given state
+until the base voltage switches it to the opposite state.
+
+ 
+
+Another Code
+
+Two-state operation is universal in digital electronics. By
+deliberate design, all input and output voltages are either
+low or high. Here’s how binary numbers come in: low
+voltage represents binary 0, and high voltage stands for
+binary 1. In other words, we use this code:
+
+Voltage Binary
+Low 0
+High 1
+
+For instance, the base voltages of Fig. 1-2 are low-low-
+high-high, or binary 0011. The collector voltages are high-
+high-low-low, or binary 1100. By changing the base voltages
+we can store any binary number from 0000 to 1111 (decimal
+0 to 15).
+
+Bit
+
+Bit is an abbreviation for binary digit. A binary number
+like 1100 has 4 bits; 110011 has 6 bits; and 11001100 has
+8 bits. Figure 1-2 is a 4-bit register. To store larger binary
+numbers, it needs more transistors. Add two transistors and
+you get a 6-bit register. With four more transistors, you’d
+have an 8-bit register.
+
+Nonsaturated Circuits
+
+Don’t get the idea that all two-state circuits switch between
+cutoff and saturation. When a bipolar transistor is heavily
+saturated, extra carriers are stored in the base region. If the
+base voltage suddenly switches from high to low, the
+transistor cannot come out of saturation until these extra
+carriers have a chance to leave the base region. The time
+it takes for these carriers to leave is called the saturation
+delay time t,. Typically, ty is in nanoseconds.
+
+In most applications the saturation delay time is too short
+to matter. But some applications require the fastest possible
+
+ 
+
+  
+
+OV
+Fig. 1-2 Transistor register.
+
+4 Digital Computer Electronics
+
+O+5V
+TkQ 1kQ
+OV OV
+(Approx.) (Approx.)
+10 kQ 10 kQ
++8V +5V
+switching time. To get this maximum speed, designers have
+come up with circuits that switch from cutoff (or near
+cutoff) to a higher point on the load line (but short of
+saturation). These nonsaturated circuits rely on clamping
+diodes or heavy negative feedback to overcome transistor
+variations.
+
+Remember this: whether saturated or nonsaturated circuits
+are used, the transistors switch between distinct points on
+the load line. This means that all input and output voltages
+are easily recognized as low or high, binary 0 or binary 1.
+
+SLOP
+
+/ / / /
+fa)
+(b}
+Fig. 1-3 Core register.
+
+Magnetic Cores
+
+Early digital computers used magnetic cores to store data.
+Figure 1-3a shows a 4-bit core register. With the right-
+hand rule, you can see that conventional current into a wire
+produces a clockwise flux; reversing the current gives a
+counterclockwise flux. (The same result is obtained if
+electron-flow is assumed and the left-hand rule is used.)
+
+The cores have rectangular hysteresis loops; this means
+that flux remains in a core even though the magnetizing
+current is removed (see Fig. 1-3b). This is why a core
+register can store binary data indefinitely. For instance,
+let’s use the following code:
+
+ 
+
+ 
+
+Flux Binary
+Counterclockwise 0
+Clockwise 1
+
+ 
+
+Then, the core register of Fig. 1-3b stores binary 1001,
+equivalent to decimal 9. By changing the magnetizing
+currents in Fig. 1-3a we can change the stored data.
+
+To store larger binary numbers, add more cores. Two
+cores added to Fig. 1-3a result in a 6-bit register; four more
+cores give an 8-bit register.
+
+The memory is one of the main parts of a computer.
+Some memories contain thousands of core registers. These
+registers store the program and data needed to run the
+computer.
+
+Other Two-State Examples
+
+The simplest example of a two-state device is the on-off
+switch. When this switch is closed, it represents binary |;
+when it’s open, it stands for binary 0.
+
+Punched cards are another example of the two-state
+concept. A hole in a card stands for binary |, the absence
+of a hole for binary 0. Using a prearranged code, a card-
+punch machine with a keyboard can produce a stack of
+cards containing the program and data needed to run a
+computer.
+
+Magnetic tape can also store binary numbers. Tape
+recorders magnetize some points on the tape (binary 1),
+while leaving other points unmagnetized (binary 0). By a
+prearranged code, a row of points represents either a coded
+instruction or data. In this way, a reel of tape can store
+thousands of binary instructions and data for later use in a
+computer.
+
+Even the lights on the control panel of a large computer
+are binary; a light that’s on stands for binary 1, and one
+that’s off stands for binary 0. In a 16-bit computer, for
+instance, a row of 16 lights allows the operator to see the
+binary contents in different computer registers. The operator
+can then monitor the overall operation and, when necessary,
+troubleshoot.
+
+In summary, switches, transistors, cores, cards, tape,
+lights, and almost all other devices used with computers
+are based on two-state operation. This is why we are forced
+to use binary numbers when analyzing computer action.
+
+ 
+
+EXAMPLE 1-3
+
+Figure 1-4 shows a strip of magnetic tape. The black circles
+are magnetized points and the white circles unmagnetized
+points. What binary number does each horizontal row
+represent?
+
+ 
+
+ 
+
+C09O0008ee8
+@00006eeo0
+@ec@eceee
+o0O@e0CO®e
+@eeeooeeco
+oe00 e006
+@ecoceece
+(Le N]
+
+ 
+
+ 
+
+Fig. 1-4 Binary numbers on magnetic tape.
+
+SOLUTION
+
+ 
+
+The tape stores these binary numbers:
+
+Row | 00001111 Row 5 11100110
+Row 2 10000110 Row 6 01001001
+Row 3 10110111 Row 7 11001101
+Row 4 00110001
+
+Chapter 1 Number Systems and Codes 5
+(Note: these binary numbers may represent either coded
+instructions or data.)
+
+A string of 8 bits is called a byte. In this example, the
+magnetic tape stores 7 bytes. The first byte (row 1) is
+00001111. The second byte (row 2) is 10000110. The third
+byte is 10110111. And so on.
+
+A byte is the basic unit of data in computers. Most
+computers process data in strings of 8 bits or some multiple
+(16, 24, 32, and so on). Likewise, the memory stores data
+in strings of 8 bits or some multiple of 8 bits.
+
+ 
+
+1-5 BINARY-TO-DECIMAL
+CONVERSION
+
+You already know how to count to 15 using binary numbers.
+The next thing to learn is how to convert larger binary
+numbers to their decimal equivalents.
+
+ 
+
+5 7 0 3 4 1 1 0 0 1
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+104 = 10% = 10? 191 10° ae 2322 gt
+fa} {b)
+Fig. 1-5 (a) Decimal weights; (6) binary weights.
+
+Decimal Weights
+
+The decimal number system is an example of positional
+notation; each digit position has a weight or value. With
+decimal numbers the weights are units, tens, hundreds,
+thousands, and so on. The sum of all digits multiplied by
+their weights gives the total amount being represented.
+For instance, Fig. 1-5a illustrates a decimal odometer.
+Below each digit is its weight. The digit on the right has a
+weight of 10° (units), the second digit has a weight of 10!
+(tens), the third digit a weight of 10? (hundreds), and so
+forth. The sum of all units multiplied by their weights is
+
+(5 x 104) + (7 x 10) + (0 x 10?) + (3 x 10')
++ (4 x 10°) = 50,000 + 7000 + 0 + 30 + 4
+= 37,034
+
+Binary Weights
+
+Positional notation is also used with binary numbers because
+each digit position has a weight. Since only two digits are
+used, the weights are powers of 2 instead of 10. As shown
+in the binary odometer of Fig. 1-5b, these weights are 2°
+(units), 2' (twos), 2? (fours), 2? (eights), and 24 (sixteens).
+If longer binary numbers are involved, the weights continue
+in ascending powers of 2.
+
+The decimal equivalent of a binary number equals the
+sum of all binary digits multiplied by their weights. For
+instance, the binary reading of Fig. 1-5b has a decimal
+equivalent of
+
+6 Digital Computer Electronics
+
+(1 x 24) + (1 x 23) + (0 x 2) + (0 x 2)
++(1X2%)=16+8+0+4041=25
+
+Binary 11001 is therefore equivalent to decimal 25.
+As another example, the byte 11001100 converts to
+decimal as follows:
+
+(1 x 27) + (1 X 2% + (0 x 25) + (0 x 24)
++ (1 x 23) + (1 x 27) + © x 2!) + ( x 2°)
+= 128 + 6444+04+0+4+8+4+4+0+4+0 = 204
+
+So, binary 11001100 is equivalent to decimal 204.
+
+Fast and Easy Conversion
+
+Here’s a streamlined way to convert a binary number to its
+decimal equivalent:
+
+1. Write the binary number.
+
+2. Write the weights 1, 2,4, 8,...
+digits.
+
+3. Cross out any weight under a 0.
+
+4. Add the remaining weights.
+
+, under the binary
+
+For instance, binary 1101 converts to decimal as follows:
+
+1. I 1 O 1 (Write binary number)
+2 8 4 2 1 (Write weights)
+
+3, 8 4 @ 1 (Cross out weights)
+
+4 8+44+041=13 (Add weights)
+
+You can compress the steps even further:
+
+11041 (Step 1)
+8 42 1-13 (Steps 2 to 4)
+
+As another example, here’s the conversion of binary
+1110101 in compressed form:
+
+1 1 1
+64 32 16
+
+0101
+8 4 2 1-117
+Base or Radix
+
+The base or radix of a number system equals the number
+of digits it has. Decimal numbers have a base of 10 because
+digits 0 through 9 are used. Binary numbers have a base
+of 2 because only the digits 0 and | are used. (In terms of
+an odometer, the base or radix is the number of digits on
+each wheel.)
+
+A subscript attached to a number indicates the base of
+the number. 100, means binary 100. On the other hand,
+100, stands for decimal 100. Subscripts help clarify equa-
+tions where binary and decimal numbers are mixed. For
+instance, the last two examples of binary-to-decimal con-
+version can be written like this:
+1101, = 1349
+1110101, = 11749
+
+In this book we will use subscripts when necessary for
+clarity.
+
+1-6 MICROPROCESSORS
+
+What is inside a computer? What is a microprocessor? What
+is a microcomputer?
+
+Computer
+
+The five main sections of a computer are input, memory,
+arithmetic and logic, control, and output. Here is a brief
+description of each.
+
+Input This consists of all the circuits needed to get
+programs and data into the computer. In some computers
+the input section includes a typewriter keyboard that converts
+letters and numbers into strings of binary data.
+
+Memory This stores the program and data before the
+computer run begins. It also can store partial solutions
+during a computer run, similar to the way we use a scratchpad
+while working out a problem.
+
+Control This is the computer’s center of gravity, analo-
+gous to the conscious part of the mind. The control section
+directs the operation of all other sections. Like the conductor
+of an orchestra, it tells the other sections what to do and
+when to do it.
+
+Arithmetic and logic This is the number-crunching sec-
+tion of the machine. It can also make logical decisions.
+With control telling it what to do and with memory feeding
+it data, the arithmetic-logic unit (ALU) grinds out answers
+to number and logic problems.
+
+Output This passes answers and other processed data to
+the outside world. The output section usually includes a
+video display to allow the user to see the processed data.
+
+Microprocessor
+
+The control section and the ALU are often combined
+physically into a single unit called the central processing
+unit (CPU). Furthermore, it’s convenient to combine the
+input and output sections into a single unit called the input-
+output (I/O) unit. In earlier computers, the CPU, memory,
+and I/O unit filled an entire room.
+
+With the advent of integrated circuits, the CPU, memory,
+and I/O unit have shrunk dramatically. Nowadays the CPU
+can be fabricated on a single semiconductor chip called a
+microprocessor. In other words, a microprocessor is nothing
+more than a CPU on a chip.
+
+Likewise, the I/O circuits and memory can be fabricated
+on chips. In this way, the computer circuits that once filled
+a room now fit on a few chips.
+
+Microcomputer
+
+As the name implies, a microcomputer is a small computer.
+More specifically, a microcomputer is a computer that uses
+a microprocessor for its CPU. The typical microcomputer
+has three kinds of chips: microprocessor (usually one chip),
+memory (several chips), and I/O (one or more chips).
+
+If a small memory is acceptable, a manufacturer can
+fabricate all computer circuits on a single chip. For instance,
+the 8048 from Intel Corporation is a one-chip microcomputer
+with an 8-bit CPU, 1,088 bytes of memory, and 27 I/O
+lines.
+
+Powers of 2
+
+Microprocessor design started with 4-bit devices, then
+evolved to 8- and 16-bit devices. In our later discussions
+of microprocessors, powers of 2 keep coming up because
+of the binary nature of computers. For this reason, you
+should study Table 1-3. It lists the powers of 2 encountered
+in microcomputer analysis. As shown, the abbreviation K
+stands for 1,024 (approximately 1,000).+ Therefore, 1K
+means 1,024, 2K stands for 2,048, 4K for 4,096, and so
+on.
+
+Most personal microcomputers have 640K (or greater)
+memories that can store 655,360 bytes (or more).
+
+TABLE 1-3. POWERS OF 2
+
+ 
+
+ 
+
+Powers of 2. Decimal equivalent Abbreviation
+
+2° 1
+
+2! 2
+
+22 4
+
+23 8
+
+24 16
+
+2° 32
+
+2° 64
+
+2? 128
+
+28 256
+
+29 512
+
+210 1,024 1K
+2" 2,048 2K
+2”? 4,096 4K.
+213 8,192 8K
+214 16,384 16K
+21 32,768 32K
+216 65,536 64K
+
+ 
+
+{ The abbreviations 1K, 2K, and so on, became established
+before K- for kilo- was in common use. Retaining the capital K
+serves as a useful reminder that K only approximates 1,000.
+
+Chapter 1 Number Systems and Codes 7
+
+ 
+
+ 
+ 
+
+1-7 DECIMAL-TO-BINARY
+CONVERSION
+
+Next, you need to know how to convert from decimal to
+binary. After you know how it’s done, you will be able to
+understand how circuits can be built to convert decimal
+numbers into binary numbers.
+
+Double-Dabble
+
+Double-dabble is a way of converting any decimal number
+to its binary equivalent. It requires successive division by
+2, writing down each quotient and its remainder. The
+remainders are the binary equivalent of the decimal number.
+The only way to understand the method is to go through
+an example, step by step.
+
+Here is how to convert decimal 13 to its binary equivalent.
+Step 1. Divide 13 by 2, writing your work like this:
+
+6 1-— (first remainder)
+
+2)13
+
+The quotient is 6 with a remainder of 1.
+Step 2. Divide 6 by 2 to get
+
+3  0-— (second remainder)
+2)6 1
+2)13
+
+This division gives 3 with a remainder of 0.
+Step 3. Again you divide by 2:
+
+1 1 — (third remainder)
+2)3 0
+2)6 1
+2)13
+
+Here you get a quotient of 1 and a remainder of 1.
+Step 4. One more division by 2 gives
+
+Read
+down
+0 1
+
+2)1 1
+2)3 0
+2)6
+2)13
+
+_
+
+8 Digital Computer Electronics
+
+In this final division, 2 does not divide into 1; therefore,
+the quotient is 0 with a remainder of 1.
+
+Whenever you arrive at a quotient of 0 with a remainder
+of 1, the conversion is finished. The remainders when read
+downward give the binary equivalent. In this example,
+binary 1101 is equivalent to decimal 13.
+
+Double-dabble works with any decimal number. Pro-
+gressively divide by 2, writing each quotient and its
+remainder. When you reach a quotient of 0 and a remainder
+of 1, you are finished; the remainders read downward are
+the binary equivalent of the decimal number.
+
+Streamlined Double-Dabble
+
+There’s no need to keep writing down 2 before each division
+because you’re always dividing by 2. From now on, here’s
+how to show the conversion of decimal 13 to its binary
+equivalent:
+
+soa ase
+
+ 
+
+EXAMPLE 1-4
+
+Convert decimal 23 to binary.
+
+SOLUTION
+
+ 
+
+The first step in the conversion looks like this:
+
+ll 1
+
+2)23
+
+After all divisions, the finished work looks like this:
+
+=|] a Soe
+
+_
+
+1
+
+2)23
+
+This says that binary 10111 is equivalent to decimal 23.
+
+ 
+1-8 HEXADECIMAL NUMBERS
+
+Hexadecimal numbers are extensively used in micropro-
+cessor work. To begin with, they are much shorter than
+binary numbers. This makes them easy to write and
+remember. Furthermore, you can mentally convert them to
+binary form whenever necessary.
+
+An Unusual Odometer
+
+Hexadecimal means 16. The hexadecimal number system
+has a base or radix of 16. This means that it uses 16 digits
+to represent all numbers. The digits are 0 through 9, and
+A through F as follows: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B,
+C, D, E, and F. Hexadecimal numbers are strings of these
+digits like 8A5, 4CF7, and EC58.
+
+An easy way to understand hexadecimal numbers is to
+visualize a hexadecimal odometer. Each wheel has 16 digits
+on its circumference. As it turns, it displays 0 through 9
+as before. But then, instead of resetting, it goes on to
+display A, B, C, D, E, and F.
+
+The idea of reset and carry applies to a hexadecimal
+odometer. When a wheel turns from F back to 0, it forces
+the next higher wheel to advance by 1. In other words,
+when a wheel runs out of hexadecimal digits, it resets and
+carries.
+
+If used in a car, a hexadecimal odometer would count
+as follows. When the car is new, the odometer shows all
+Os:
+
+0000 (zero)
+
+The next 9 miles produce readings of
+
+0001 (one)
+0002 (two)
+0003 (three)
+0004 (four)
+0005 (five)
+0006 (six)
+0007 (seven)
+0008 (eight)
+0009 (nine)
+
+The next 6 miles give
+
+000A (ten)
+000B (eleven)
+000C (twelve)
+000D (thirteen)
+OO0E (fourteen)
+OOOF (fifteen)
+
+At this point the least significant wheel has run out of
+digits. Therefore, the next mile forces a reset-and-carry to
+get
+
+0010 (sixteen)
+
+The next 15 miles produce these readings: 0011, 0012,
+0013, 0014, 0015, 0016, 0017, 0018, 0019, OOLA, 001B,
+O001C, O01D, OO1E, and OOIF. Once again, the least
+significant wheel has run out of digits. So, the next mile
+results in a reset-and-carry:
+
+0020 (thirty-two)
+
+Subsequent readings are 0021, 0022, 0023, 0024, 0025,
+0026, 0027, 0028, 0029, 002A, 002B, 002C, 002D, 002E,
+and 002F.
+
+You should have the idea by now. Each mile advances
+the least significant wheel by 1. When this wheel runs out
+of hexadecimal digits, it resets and carries. And so on for
+the other wheels. For instance, if the odometer reading is
+
+835F
+
+the next reading is 8360. As another example, given
+SFFF
+
+the next hexadecimal number is 6000.
+
+Equivalences
+
+Table 1-4 shows the equivalences between hexadecimal,
+binary, and decimal digits. Memorize this table. It’s essential
+that you be able to convert instantly from one system to
+another.
+
+TABLE 1-4. EQUIVALENCES
+
+ 
+
+ 
+
+Hexadecimal __ Binary Decimal
+0 0000 0
+1 0001 1
+2 0010 2
+3 0011 3
+4 0100 4
+5 0101 5
+6 0110 6
+7 0111 7
+8 1000 8
+9 1001 9
+A 1010 10
+B 1011 11
+Cc 1100 12
+D 1101 13
+E 1110 14
+F 1111 15
+
+ 
+
+Chapter 1 Number Systems and Codes 9
+
+ 
+ 
+
+1-9 HEXADECIMAL-BINARY
+CONVERSIONS
+
+After you know the equivalences of Table 1-4, you can
+mentally convert any hexadecimal string to its binary
+equivalent and vice versa.
+
+Hexadecimal to Binary
+
+To convert a hexadecimal number to a binary number,
+convert each hexadecimal digit to its 4-bit equivalent, using
+Table 1-4. For instance, here’s how 9AF converts to binary:
+
+9 A F
+
+a ee
+1001 1010 1111
+
+As another example, CSE2 converts like this:
+
+Cc 5 E 2
+
+ee
+1100 0101 1110 0010
+
+Incidentally, for easy reading it’s common practice to leave
+a space between the 4-bit strings. For example, instead of
+writing
+
+C5E2,, = 1100010111100010,
+
+we can write
+
+C5E2,, = 1100 0101 1110 0010,
+
+Binary to Hexadecimal
+
+To convert in the opposite direction, from binary to
+hexadecimal, you again use Table 1-4. Here are two
+examples. The byte 1000 1100 converts as follows:
+
+1000 1100
+Lod
+8 oC
+
+The 16-bit number 1110 1000 1101 0110 converts like this:
+
+1110 1000 110! 0110
+
+ee ee ee
+E 8 D_ 6
+
+In both these conversions, we start with a binary number
+and wind up with the equivalent hexadecimal number.
+
+10 Digital Computer Electronics
+
+ 
+
+ 
+
+EXAMPLE 1-5
+
+Solve the following equation for x:
+
+Xie = 11411 1111 1111 1111,
+
+SOLUTION
+
+ 
+
+This is the same as asking for the hexadecimal equivalent
+of binary 1111 1111 1111 1111. Since hexadecimal F is
+equivalent to 1111, x = FFFF. Therefore,
+
+FFFF,, = 1111 1111 1111 i111,
+
+ 
+
+EXAMPLE 1-6
+
+As mentioned earlier, the memory contains thousands of
+registers (core or semiconductor) that store the program and
+data needed for a computer run. These memory registers
+are known as memory locations. A typical microcomputer
+may have up to 65,536 memory locations, each storing |
+byte.
+
+Suppose the first 16 memory locations contain these
+bytes:
+
+0011 1100
+1100 1101
+0101 O111
+0010 1000
+1111 0001
+0010 1010
+1101 0100
+0100 0000
+OLL1 O11]
+1100 0011
+1000 0100
+0010 1000
+0010 0001
+0011 1010
+0011 1110
+0001 1111
+
+Convert these bytes to their hexadecimal equivalents.
+
+SOLUTION
+
+ 
+
+Here are the stored bytes and their hexadecimal equivalents:
+
+Memory Contents Hex Equivalents
+
+OOLL 1100 3C
+1100 1101 CD
+O101 OLLI 57
+0010 1000 28
+1111 0001 Fl
+0010 1010 2A
+
+1101 0100 D4
+0100 0000 40
+0111 O111 77
+1100 0011 C3
+1000 0100 84
+0010 1000 28
+0010 0001 21
+0011 1010 3A
+0011 1110 3E
+0001 1111 IF
+
+What’s the point of this example? When talking about
+the contents of a computer memory, we can use either
+binary numbers or hexadecimal numbers. For instance, we
+can say that the first memory location contains 0011 1100,
+or we can say that it contains 3C. Either string gives the
+same information. But notice how much easier it is to say,
+write, and think 3C than it is to say, write, and think 0011
+1100. In other words, hexadecimal strings are much easier
+for people to work with. This is why everybody working
+with microprocessors uses hexadecimal notation to represent
+particular bytes.
+
+What we have just done is known as chunking, replacing
+longer strings of data with shorter ones. At the first memory
+location we chunk the digits 0011 1100 into 3C. At the
+second memory location we chunk the digits 1100 1101
+into CD, and so on.
+
+ 
+
+EXAMPLE 1-7
+
+The typical microcomputer has a typewriter keyboard that
+allows you to enter programs and data; a video screen
+displays answers and other information.
+
+Suppose the video screen of a microcomputer displays
+the hexadecimal contents of the first eight memory locations
+as
+
+A7
+28
+C3
+19
+SA
+4D
+2C
+F8
+
+What are the binary contents of the memory locations?
+
+SOLUTION
+
+ 
+
+Convert from hexadecimal to binary to get
+
+1010 O11]
+0010 1000
+
+1100 0011
+0001 1001
+0101 1010
+0100 1101
+0010 1100
+1111 1000
+
+The first memory location stores the byte 1010 0111, the
+second memory location stores the byte 0010 1000, and so
+on.
+
+This example emphasizes a widespread industrial prac-
+tice. Microcomputers are programmed to display chunked
+data, often hexadecimal. The user is expected to know
+hexadecimal-binary conversions. In other words, a computer
+manufacturer assumes that you know that A7 represents
+1010 0111, 28 stands for 0010 1000, and so on.
+
+One more point. Notice that each memory location in
+this example stores | byte. This is typical of first-generation
+microcomputers because they use 8-bit microprocessors.
+
+ 
+
+1-10 HEXADECIMAL-TO-DECIMAL
+CONVERSION
+
+You often need to convert a hexadecimal number to its
+decimal ‘equivalent. This section discusses methods for
+doing it.
+
+Hexadecimal to Binary to Decimal
+
+One way to convert from hexadecimal to decimal is the
+two-step method of converting from hexadecimal to binary
+and then from binary to decimal. For instance, here’s how
+to convert hexadecimal 3C to its decimal equivalent.
+
+Step 1. Convert 3C to its binary equivalent:
+
+3 C
+t {
+0011 1100
+
+Step 2. Convert 0011 1100 to its decimal equivalent:
+
+0 0 1 1 1100
+128 64 32 16 8 4 2 [>60
+
+Therefore, decimal 60 is equivalent to hexadecimal 3C. As
+an equation,
+
+3Ci6 = 0011 1100, = 6010
+
+Positional-Notation Method
+
+Positional notation is also used with hexadecimal numbers
+because each digit position has a weight. Since 16 digits
+are used, the weights are the powers of 16. As shown in
+
+Chapter 1 Number Systems and Codes 11
+ 
+
+F 8 E 6
+
+18 16 16! 160
+Fig. 1-6 Hexadecimal weights.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+the hexadecimal odometer of Fig. 1-6, the weights are 16°,
+16', 16’, and 16°. If longer hexadecimal numbers are
+involved, the weights continue in ascending powers of 16.
+
+The decimal equivalent of a hexadecimal string equals
+the sum of all hexadecimal digits multiplied by their weights.
+(In processing hexadecimal digits A through F, use 10
+through 15.) For instance, the hexadecimal reading of Fig.
+1-6 has a decimal equivalent of
+
+(F x 16%) + (8 x 167) + (E x 16!) + (6 x 16°)
+= (15 x 16%) + (8 X 167) + (14 x 16!) + (6 x 16°)
+= 61,440 + 2,048 + 224 + 6
+= 63,718
+
+In other words,
+
+F8E6,¢ = 63,7184
+
+ 
+
+ 
+
+0000 3C 4 0000 }
+0001 cD
+
+0002 57
+
+0003 28
+
+0004 Fi
+
+0005 2A
+
+0006 D4
+
+0007 | 40 16 65,536
+0008 77 locations locations
+0009 C3
+
+000A 84
+
+000B 28
+
+o000C 21
+00D 3A
+OOOE 3E
+
+OOOF 1F { FFFF Y
+
+(a) (b}
+Fig. 1-7 (a) First 16 words in memory; (b) 64K memory.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Memory Locations and Addresses
+
+If a certain microcomputer has 64K memory, meaning
+65,536 memory locations, each is able to store | byte. The
+different memory locations are identified by hexadecimal
+numbers called addresses. For instance, Fig. 1-7a shows
+the first 16 memory locations; their addresses are from 0000
+to OOOF.
+
+The address of a memory location is different from its
+stored contents, just as a house address is different from
+
+12 Digital Computer Electronics
+
+the people living in the house. Figure 1-7a emphasizes the
+point. At address 0000 the stored contents are 3C (equivalent
+to 0011 1100). At address 0001 the stored contents are CD,
+at address 0002 the stored contents are 57, and so on.
+
+Figure 1-7b shows how to visualize a 64K memory. The
+first address is 0000, and the last is FFFF.
+
+Table of Binary-Hexadecimal-Decimal
+Equivalents
+
+A 64K memory has 65,536 hexadecimal addresses from
+0000 to FFFF. The equivalent binary addresses are from
+
+0000 0000 0000 0000
+to
+
+P111 1111 1111 1111
+
+The first 8 bits are called the upper byte (UB); the second
+8 bits are the lower byte (LB). If you have to do a lot of
+binary-hexadecimal-decimal conversions, use the table of
+equivalents in Appendix 2, which shows all the values for
+a 64K memory.
+
+Appendix 2 has four headings: binary, hexadecimal, UB
+decimal, and LB decimal. Given a 16-bit address, you
+convert the upper byte to its decimal equivalent (UB
+decimal), the lower byte to its decimal equivalent (LB
+decimal), and then add the two decimal equivalents. For
+instance, suppose you want to convert
+
+1101 0111 1010 0010
+
+to its decimal equivalent. The upper byte is 1101 O111, or
+hexadecimal D7; the lower byte is 1010 0010, or A2. Using
+Appendix 2, find D7 and its UB decimal equivalent
+
+D7 — 55,040
+Next, find A2 and its LB decimal equivalent
+A2 — 162
+Add the UB and LB decimal equivalents to get
+55,040 + 162 = 55,202
+
+This is the decimal equivalent of hexadecimal D7A2 or
+binary 1101 0111 1010 0010.
+
+Once familiar with Appendix 2, you will find it enor-
+mously helpful. It is faster, more accurate, and less tiring
+than other methods. The only calculation required is adding
+the UB and LB decimal, easily done mentally, with pencil
+and paper, or if necessary, on a calculator. Furthermore, if
+you are interested in converting only the lower byte, no
+calculation is required, as shown in the next example.
+ 
+
+EXAMPLE 1-8
+
+Convert hexadecimal 7E to its decimal equivalent.
+
+SOLUTION
+
+EXAMPLE 1-9
+
+Convert decimal 141 to hexadecimal.
+
+SOLUTION
+
+ 
+
+When converting only a single byte, all you are dealing
+with is the lower byte. With Appendix 2, look up 7E and
+its LB decimal equivalent to get
+
+TE — 126
+
+In other words, Appendix 2 can be used to convert single
+bytes to their decimal equivalents (LB decimal) or double
+bytes to their decimal equivalents (UB decimal + LB
+decimal).
+
+ 
+
+1-11 DECIMAL-TO-HEXADECIMAL
+CONVERSION
+
+One way to perform decimal-to-hexadecimal conversion is
+to go from decimal to binary then to hexadecimal. Another
+way is hex-dabble. The idea is to divide successively by
+16, writing down the remainders. (Hex-dabble is like double-
+dabble except that 16 is used for the divisor instead of 2.)
+
+Here’s an example of how to convert decimal 2,479 into
+hexadecimal form. The first division is
+
+154 15 F
+16 ) 2,479
+
+The next step is
+
+9 10 A
+) 154 15 F
+16 )2,479
+
+The final step is
+
+Read
+
+down
+0 9 9
+y9 10 A
+) 154 15 F
+
+16 ) 2,479
+
+Notice how similar hex-dabble is to double-dabble. Also,
+remainders greater than 9 have to be changed to hexadecimal
+digits (10 becomes A, 15 becomes F, etc.).
+
+If you prefer, use Appendix 2 to look up the decimal-
+hexadecimal equivalents. The next two examples show
+how.
+
+Whenever the decimal number is between 0 and 255, all
+you have to do is look up the decimal number and its
+hexadecimal equivalent. With Appendix 2, you can see at
+a glance that
+
+8D <— 141
+
+ 
+
+EXAMPLE 1-10
+
+Convert decimal 36,020 to its hexadecimal equivalent.
+
+SOLUTION
+
+ 
+
+If the decimal number is between 256 and 65,535, you
+need to proceed as follows. First, locate the largest UB
+decimal that is less than 36,020. In Appendix 2, the largest
+UB decimal is
+
+UB decimal = 35,840
+which has a hexadecimal equivalent of
+8C <— 35,840
+
+This is the upper byte.
+Next, subtract the UB decimal from the original decimal
+number:
+
+36,020 — 35,840 = 180
+The difference 180 has a hexadecimal equivalent
+B4 <— 180
+
+This is the lower byte.
+
+By combining the upper and lower bytes, we get the
+complete answer: 8CB4. This is the hexadecimal equivalent
+of 36,020.
+
+After a little practice, you will find Appendix 2 to be
+one of the fastest methods of decimal-hexadecimal conver-
+sion.
+
+ 
+
+1-12 BCD NUMBERS
+
+A nibble is a string of 4 bits. Binary-coded-decimal (BCD)
+numbers express each decimal digit as a nibble. For instance,
+decimal 2,945 converts to a BCD number as follows:
+
+Chapter 1 Number Systems and Codes 13
+
+ 
+ 
+
+2 9 4 5
+
+a es ee
+
+0010 1001 0100 O101
+
+As you see, each decimal digit is coded as a nibble.
+Here’s another example: 9,863) converts like this:
+
+9 8 6 3
+
+Ld dd 4
+1001 1000 0110 0011
+
+Therefore, 1001 1000 0110 0011 is the BCD equivalent of
+9 8631.
+
+The reverse conversion is similar. For instance, 0010
+1000 0111 0100 converts as follows:
+
+0010 1000 O111 0100
+
+( s db od
+2 8 7 4
+
+Applications
+
+BCD numbers are useful wherever decimal information is
+transferred into or out of a digital system. The circuits
+inside pocket calculators, for example, can process BCD
+numbers because you enter decimal numbers through the
+keyboard and see decimal answers on the LED or liquid-
+crystal display. Other examples of BCD systems are elec-
+tronic counters, digital voltmeters, and digital clocks; their
+circuits can work with BCD numbers.
+
+BCD Computers
+
+BCD numbers have limited value in computers. A few
+early computers processed BCD numbers but were slower
+and more complicated than binary computers. As previously
+mentioned, a computer is more than a number cruncher
+because it must handle names and other nonnumeric data.
+In other words, a modern computer must be able to process
+alphanumerics (alphabet letters, numbers, and other sym-
+bols). This why modern computers have CPUs that process
+binary numbers rather than BCD numbers.
+
+Comparison of Number Systems
+
+Table 1-5 shows the four number systems we have discussed.
+Each number system uses strings of digits to represent
+quantity. Above 9, equivalent strings appear different. For
+instance, decimal string 128, hexadecimal string 80, binary
+string 1000 0000, and BCD string 0001 0010 1000 are
+equivalent because they represent the same number of
+pebbles.
+
+Machines have to use long strings of binary or BCD
+numbers, but people prefer to chunk the data in either
+decimal or hexadecimal form. As long as we know how to
+
+14 Digital Computer Electronics
+
+TABLE 1-5. NUMBER SYSTEMS
+
+ 
+
+ 
+
+Decimal Hexadecimal Binary BCD
+
+0 0 0000 0000 0000 0000 0000
+
+1 1 0000 0001 0000 0000 0001
+
+2 2 0000 0010 0000 0000 0010
+
+3 3 0000 0011 0000 0000 0011
+
+4 4 0000 0100 0000 0000 0100
+
+5 5 0000 0101 0000 0000 0101
+
+6 6 0000 0110 0000 0000 0110
+
+7 7 0000 0111 0000 0000 0111
+
+8 8 0000 1000 0000 0000 1000
+
+9 9 0000 1001 0000 0000 1001
+10 A 0000 1010 0000 0001 0000
+il B 0000 1011 0000 0001 0001
+12 C 0000 1100 0000 0001 0010
+13 D 0000 1101 0000 0001 0011
+14 E 0000 1110 0000 0001 0100
+15 F 0000 1111 0000 0001 0101
+16 10 0001 0000 0000 0001 0110
+32 20 0010 0000 0000 0011 0010
+64 40 0100 0000 0000 0110 0100
+128 80 1000 0000 0001 0010 1000
+255 FF 1111 1111 0010 0101 0101
+
+ 
+
+convert from one number system to the next, we can always
+get back to the ultimate meaning, which is the number of
+pebbles being represented.
+
+1-13 THE ASCII CODE
+
+To get information into and out of a computer, we need to
+use numbers, letters, and other symbols. This implies some
+kind of alphanumeric code for the I/O unit of a computer.
+At one time, every manufacturer had a different code,
+which led to all kinds of confusion. Eventually, industry
+settled on an input-output code known as the American
+Standard Code for Information Interchange (abbreviated
+ASCII). This code allows manufacturers to standardize
+1/O hardware such as keyboards, printers, video displays,
+and so on.
+
+The ASCII (pronounced ask'-ee) code is a 7-bit code
+whose format (arrangement) is
+
+X6X5X4X3X2XK Xo
+where each X is a O or a 1. For instance, the letter A is
+coded as
+1000001
+
+Sometimes, a space is inserted for easier reading:
+
+100 0001
+TABLE 1-6. THE ASCII CODE
+
+ 
+
+010 «6011 «86100 ) «61010 «=6110~—Ss 111
+
+ 
+
+X;X,X1Xo
+
+ 
+
+0000 SP
+0001 \
+0010 "
+0011 #
+0100 $
+0101 %
+0110 &
+Olli ,
+1000 (
+1001 )
+1010 *
+1011 +
+1100 ,
+1101 =
+1110 :
+1111 /
+
+WCAADNAWNHO
+
+OZZrACH BMA MMA PO
+NX «MS <GHaADO'V
+
+ona Be wee ro roa oe
+Nite Sc Gann ose
+
+OVI Ae
+
+ 
+
+Table 1-6 shows the ASCII code. Read the table the
+same as a graph. For instance, the letter A has an XgX5Xq
+of 100 and an X,X,X,X, of 0001. Therefore, its ASCII
+code is
+
+100 0001 (A)
+Table 1-6 includes the ASCII code for lowercase letters.
+The letter a is coded as
+
+110 0001 (a)
+
+More examples are
+
+1100010 —(b)
+1100011 — (c)
+1100100 (d)
+
+and so on.
+
+Also look at the punctuation and mathematical symbols.
+Some examples are
+
+0100100 ~—($)
+0101011. (+)
+0111101 (=)
+
+In Table 1-6, SP stands for space (blank). Hitting the space
+bar of an ASCII keyboard sends this into a microcomputer:
+
+010 0000 (space)
+
+ 
+
+EXAMPLE 1-11
+
+With an ASCII keyboard, each keystroke produces the
+ASCII equivalent of the designated character. Suppose you
+
+type
+PRINT X
+
+What is the output of an ASCII keyboard?
+
+SOLUTION
+
+ 
+
+P (101 0000), R (101 0010), I (100 1001), N (400 1110),
+T (101 0100), space (010 0000), X (101 1000).
+
+ 
+
+GLOSSARY
+
+ 
+
+address Each memory location has an address, analogous
+to a house address. Using addresses, we can tell the computer
+where desired data is stored.
+
+alphanumeric Letters, numbers, and other symbols.
+base The number of digits (basic symbols) in a number
+system. Decimal has a base of 10, binary a base of 2, and
+hexadecimal a base of 16. Also called the radix.
+
+bit An abbreviation for binary digit.
+
+byte A string of 8 bits. The byte is the basic unit of binary
+information. Most computers process data with a length of
+8 bits or some multiple of 8 bits.
+
+central processing unit The control section and the arith-
+metic-logic section. Abbreviated CPU.
+
+chip An integrated circuit.
+
+chunking Replacing a longer string by a shorter one.
+data Names, numbers, and any other information needed
+to solve a problem.
+
+digital Pertains to anything in the form of digits, for
+example, digital data.
+
+hardware The electronic, magnetic, and mechanical de-
+vices used in a computer.
+
+hexadecimal A number system with a base of 16. Hexa-
+decimal numbers are used in microprocessor work.
+input-output Abbreviated I/O. The input and output sec-
+tions of a computer are often lumped into one unit known
+as the I/O unit.
+
+microcomputer A computer that uses a microprocessor
+for its central processing unit (CPU).
+
+microprocessor A CPU ona chip. It contains the control
+and arithmetic-logic sections. Sometimes abbreviated MPU
+(microprocessor unit).
+
+nibble A string of 4 bits. Half of a byte.
+
+program A sequence of instructions that tells the computer
+how to process the data. Also known as software.
+
+register A group of electronic, magnetic, or mechanical
+devices that store digital data.
+
+software Programs.
+
+string A group of digits or other symbols.
+
+Chapter 1 Number Systems and Codes 15
+
+ 
+SELF-TESTING REVIEW
+
+Read each of the following and provide the missing words.
+Answers appear at the beginning of the next question.
+
+1. Binary means . Binary numbers have a
+base of 2. The digits used in a binary number
+system are___ ss aand__
+
+2. (two; 0, 1) Names, numbers, and other information
+needed to solve a problem are called .
+The _____ is a sequence of instructions that
+tells the computer how to process the data.
+
+3. (data, program) Computer ICs work reliably be-
+cause they are based on design. When
+a transistor is cut off or saturated, transistor
+
+have almost no effect.
+
+4. (two-state, variations) A is a group of
+
+devices that store digital data. is an
+abbreviation for binary digit. A byte is a string of
+bits.
+
+5. (register, Bit, 8) The control and arithmetic-logic
+sections are called the (CPU). A micro-
+processor is a CPU on a chip. A microcomputer
+is a computer that uses a for its CPU.
+
+6. (central processing unit, microprocessor) The ab-
+breviation K indicates units of approximately 1,000
+or precisely 1,024. Therefore, 1K means 1,024, 2K
+
+7. (4,096, 65,536) The hexadecimal number system is
+widely used in analyzing and programming
+The hexadecimal digits are 0 to 9 and A to
+The main advantage of hexadecimal numbers is the
+ease of conversion from hexadecimal to
+and vice versa.
+
+8. (microprocessors, F, binary) A typical microcom-
+puter may have up to 65,536 registers in its mem-
+ory. Each of these registers, usually called a
+stores 1 byte. Such a memory is specified as a 64-
+kilobyte memory, or simply a memory.
+
+9. (memory location, 64K) Binary-coded-decimal
+(BCD) numbers express each decimal digit as a ___.
+BCD numbers are useful whenever ______ in-
+formation is transferred into or out of a digital
+system. Equipment using BCD numbers includes
+pocket calculators, electronic counters, and digital
+
+ 
+
+ 
+
+ 
+
+3
+
+voltmeters.
+
+10. (nibble, decimal) The ASCII code is a 7-bit code
+for ___________ (letters, numbers, and other sym-
+bols).
+
+11. (alphanumerics) With the typical microcomputer,
+you enter the program and data with typewriter
+keyboard that converts each character into ASCII
+code,
+
+ 
+
+means 2,048, 4K means , and 64K
+means
+PROBLEMS
+1-1. How many bytes are there in each of these num-
+How C@#084e0C ee
+a. 1100 0101 Fig. 1-8 An 8-bit LED display.
+
+b. 1011 1001 0110 1110
+c. 1111 1011 0111 0100 1010
+
+1-2. What are the equivalent decimal numbers for each
+of the following binary numbers: 10, 110, 111,
+1011, 1100, and 1110?
+
+1-3, What is the base for each of these numbers?
+
+a. 348)
+
+b. 1100 0101,
+c. 2312,
+
+d. F4C3,,
+
+1-4, Write the equation
+2+2=4
+
+using binary numbers.
+
+1-5. What is the decimal equivalent of 2'!°? What does
+4K represent? Express 8,192 in K units.
+
+1-6. A 4-bit register has output voltages of high-low-
+high-low. What is the binary number stored in the
+register? The decimal equivalent?
+
+16 Digital Computer Electronics
+
+1-7. Figure 1-8 shows an 8-bit LED display. A light
+circle means that a LED is ON (binary 1) and a
+dark circle means a LED is OFF (binary 0). What
+is the binary number being displayed? The deci-
+mal equivalent?
+
+1-8. Convert the following binary numbers to decimal
+
+numbers:
+
+a. OO111
+b. 11001
+c. 10110
+d. 11110
+
+1-9. Solve the following equation for x:
+X19 = 11001001,
+
+1-10. An 8-bit transistor register has this output:
+low-high-low-high-low-high-low-high
+
+What is the equivalent decimal number being
+stored?
+1-11.
+
+SODSGHOOG
+
+Fig. 1-9 An 8-bit core register.
+
+In Fig. 1-9 clockwise flux stands for binary 1 and
+counterclockwise flux for binary 0. What is the
+binary number stored in the 8-bit core register?
+Convert this byte to an equivalent decimal
+number.
+
+al
+
+ 
+
+10 kQ
+
+}
+
+10kQ 10 kQ
+
+Fig. 1-10 A 5-bit switch register.
+
+1-12.
+
+1-13.
+1-14.
+1-15.
+1-16.
+1-17.
+
+1-18.
+
+1-19.
+
+1-20.
+
+ee, 6
+
+Figure 1-10 shows a 5-bit switch register. By
+opening and closing the switches you can set up
+different binary numbers. As usual, high output
+voltage stands for binary 1 and low output voltage
+for binary 0. What is the binary number stored in
+the switch register? The equivalent decimal num-
+ber?
+
+Convert decimal 56 to its binary equivalent.
+Convert 72,9 to a binary number.
+
+An 8-bit transistor register stores decimal 150.
+What is the binary output of the register?
+
+How would you set the switches of Fig. 1-10 to
+get a decimal output of 27?
+
+A hexadecimal odometer displays F52A. What are
+the next six readings?
+
+The reading on a hexadecimal odometer is 27FF.
+What is the next reading? Miles later, you see a
+reading of 8AFC. What are the next six readings?
+Convert each of the following hexadecimal num-
+bers to binary:
+
+a. FF
+
+b. ABC
+
+c. CD42
+
+d. F329
+
+Convert each of these binary numbers to an
+equivalent hexadecimal number:
+
+a. 1110 1000
+
+b. 1100 1011
+
+ec. 1010 1111 0110
+
+d. 1000 1011 1101 0110
+
+1-21.
+
+1-22.
+
+1-23.
+
+1-24,
+
+1-25.
+
+e—O+5V
+
+10 kQ
+
+10kQ
+%
+
+l
+
+| a TY
+
+Here is a program written for the 8085 micro-
+processor:
+
+Address Hex Contents
+2000 3E Gh
+2001 OE
+2002 D3
+2003 20
+2004 716
+
+Convert the hex contents to equivalent binary
+numbers.
+
+Convert each of these hexadecimal numbers to its
+decimal equivalent:
+
+a. FF
+b. Ad
+c. 9B
+d. 3C
+
+Convert the following hexadecimal numbers to
+their decimal equivalents:
+
+a. OFFF
+b. 3FFEF
+c. 7FE4
+d. B3D8
+
+A microcomputer has memory locations from
+
+0000 to OFFF. Each memory location stores 1
+
+byte. In decimal, how many bytes can the micro-
+computer store in its memory? How many kilo-
+
+bytes is this?
+
+Suppose a microcomputer has memory locations
+
+from 0000 to 3FFF, each storing i byte. How i
+
+Chapter 1 Number Systems and Codes 17 os
+
+~
+
+ae
+
+i
+ 
+
+1-26.
+
+1-27.
+
+1-28.
+
+1-29.
+
+1-30.
+
+many bytes can the memory store? Express this in
+kilobytes.
+
+A microcomputer has a 32K memory. How many
+bytes does this represent? If 0000 stands for the
+first memory location, what is the hexadecimal
+notation for the last memory location?
+
+If a microcomputer has a 64K memory, what are
+the hexadecimal notations for the first and last
+memory locations?
+
+Convert the following decimal numbers to hexa-
+decimal:
+
+a. 4,095
+
+b. 16,383
+c. 32,767
+d. 65,535
+
+Convert each of the following decimal numbers to
+hexadecimal numbers:
+
+a. 238
+
+b. 7,547
+c. 15,359
+d. 47,285
+
+How many nibbles are there in each of the fol-
+lowing:
+
+‘a. 1000 O111- \
+~b. 1001 0000 0100 0011
+
+c. O101 1001 0111 0OT0 0110 O110
+
+18 Digital Computer Electronics
+
+a
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+“1-31. If the numbers in Prob. 1-30 are BCD numbers,
+‘ what are the equivalent decimal numbers?
+
+1-32. What is the ASCII code for each of the following:
+a. 7
+b. W
+c. f
+d. y
+
+1-33. Suppose you type LIST with an ASCII keyboard.
+What is the binary output as you strike each
+letter?
+
+1-34. For each of the following rows, provide the miss-
+ing numbers in the bases indicated.
+
+Base 2 Base 10 Base 16
+
+a. 0100 0001
+
+b. 200
+
+Cc. 3CD
+
+d. 125
+
+e, 1101 1110 1111
+
+f. FFFF
+
+g. 2,000
+
+ 
+
+ 
+
+ 
+ 
+
+-)-
+
+ 
+
+ 
+
+ 
+
+U
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+GATES
+
+For centuries mathematicians felt there was a connection
+between mathematics and logic, but no one before George
+Boole could find this missing link. In 1854 he invented
+symbolic logic, known today as boolean algebra. Each
+variable in boolean algebra has either of two values: true
+or false. The original purpose of this two-state algebra was
+to solve logic problems.
+
+Boolean algebra had no practical application until 1938,
+when Claude Shannon used it to analyze telephone switching
+circuits. He let the variables represent closed and open
+relays. In other words, Shannon came up with a new
+application for boolean algebra. Because of Shannon’s
+work, engineers realized that boolean algebra could be
+applied to computer electronics.
+
+This chapter introduces the gate, a circuit with one or
+more input signals but only one output signal. Gates are
+digital (two-state) circuits because the input and output
+signals are either low or high voltages. Gates are often
+called logic circuits because they can be analyzed with
+boolean algebra.
+
+2-1 INVERTERS
+
+An inverter is a gate with only one input signal and one
+output signal; the output state is always the opposite of the
+input state.
+
+Transistor Inverter
+
+Figure 2-1 shows a transistor inverter. This common-emitter
+amplifier switches between cutoff and saturation. When Vix
+is low (approximately 0 V), the transistor cuts off and Vour
+is high. On the other hand, a high V;jy saturates the transistor,
+forcing Voyrz to go low.
+
+Table 2-1 summarizes the operation. A low input produces
+a high output, and a high input results in a low output.
+Table 2-2 gives the same information in binary form; binary
+0 stands for low voltage and binary | for high voltage.
+
+An inverter is also called a NOT gate because the output
+is not the same as the input. The output is sometimes called
+the complement (opposite) of the input.
+
++5V
+
+   
+
+ 
+
+Yout
+Vin Bye > 10
+(Oor +5 V)
+Fig. 2-1 Example of inverter design.
+TABLE 2-1 TABLE 2-2
+Vin Vour Vin Vour
+
+ 
+
+Low High 0
+High Low 1
+
+1
+0
+Vin [>o Vout Vin J > Vout
+
+fa) (b)
+
+Vin lo >o Vout Vin | > Your
+
+(c} (d)
+
+Fig. 2-2 Logic symbols: (a) inverter; (6) another inverter symbol;
+(c) double inverter; (d) buffer.
+
+ 
+
+ 
+
+ 
+
+Inverter Symbol
+
+Figure 2-2a is the symbol for an inverter of any design.
+Sometimes a schematic diagram will use the alternative
+symbol shown in Fig. 2-2b; the bubble (small circle) is on
+
+19
+the input side. Whenever you see either of these symbols,
+remember that the output is the complement of the input.
+
+Noninverter Symbol
+
+If you cascade two inverters (Fig. 2-2c), you get a nonin-
+verting amplifier. Figure 2-2d is the symbol for a nonin-
+verting amplifier. Regardless of the circuit design, the action
+is always the same: a low input voltage produces a low
+output voltage, and a high input voltage results in a high
+output voltage.
+
+The main use of noninverting amplifier is buffering
+(isolating) two other circuits. More will be said about
+buffers in a later chapter.
+
+ 
+
+EXAMPLE 2-1
+
+Cc .
+6-bit 6-bit
+
+register register
+
+ 
+
+fa} (b}
+Fig. 2-3 Example 2-1.
+
+Figure 2-3a has an output, A to F, of 100101. Show how
+to complement each bit.
+
+SOLUTION
+
+ 
+
+Easy. Use an inverter on each signal line (Fig. 2-3b). The
+final output is now 011010.
+
+A hex inverter is a commercially available IC containing
+six separate inverters. Given a 6-bit register like Fig. 2-3a,
+we can connect a hex inverter to complement each bit as
+shown in Fig. 2-3b.
+
+One more point. In Fig. 2-3a the bits may represent a
+coded instruction, number, letter, etc. To convey this variety
+of meaning, a string of bits is often called a binary word
+or simply a word. In Fig. 2-3b the word 100101 is
+complemented to get the word 011010.
+
+ 
+
+2-2 OR GATES
+
+The oR gate has two or more input signals but only one
+output signal. If any input signal is high, the output signal
+is high.
+
+20 Digital Computer Electronics
+
+Ao——_}——+ Y
+
+ 
+
+80—_D+—
+
+Fig. 2-4 A 2-input diode or gate.
+
+Diode OR Gate
+
+Figure 2-4 shows one way to build an or gate. If both
+inputs are low, the output is low. If either input is high,
+the diode with the high input conducts and the output is
+high. Because of the two inputs, we call this circuit a 2-
+input OR gate.
+
+Table 2-3 summarizes the action; binary 0 stands for low
+voltage and binary | for high voltage. Notice that one or
+more high inputs produce a high output; this is why the
+circuit is called an OR gate.
+
+Ao—Dt—
+B o—D}+—_+ Y
+co—pt+—
+
+ 
+
+Fig. 2-5 A 3-input diode or gate.
+
+More than Two Inputs
+
+Figure 2-5 shows a 3-input or gate. If all inputs are low,
+all diodes are off and the output is low. If 1 or more inputs
+are high, the output is high.
+
+Table 2-4 summarizes the action. A table like this is
+called a truth table; it lists all the input possibilities and
+the corresponding outputs. When constructing a truth table,
+always list the input words in a binary progression as shown
+(000, 001, 010, ... , 111); this guarantees that all input
+possibilities will be accounted for.
+
+An OR gate can have as many inputs as desired; add one
+diode for each additional input. Six diodes result in a 6-
+
+ 
+
+ 
+
+ 
+
+TABLE 2-3. TABLE 2-4. THREE-
+TWO INPUT INPUT or GATE
+oR GATE
+a A B C Y
+A B Y
+{+ 0 0 0 0
+0 0 0 0 0 1 1
+0 1 1 0 1 0 1
+1 0 1 0 1 1 1
+1 1 1 1 0 0 1
+_ 1 0 1 1
+1 1 0 1
+1 l 1 1
+
+ 
+
+ 
+input OR gate, nine diodes in a 9-input OR gate. No matter
+how many inputs, the action of any OR gate is summarized.
+like this: one or more high inputs produce a high output.
+
+Bipolar transistors and MOSFETs can also be used to
+build OR gates. But no matter what devices are used, OR
+gates always produce a high output when one or more
+inputs are high. Figure 2-6 shows the logic symbols for
+2-, 3-, and 4-input OR gates.
+
+fa} (b) {c)
+
+Fig. 2-6 or-gate symbols.
+
+ 
+
+EXAMPLE 2-2
+
+Show the truth table of a 4-input or gate.
+
+SOLUTION
+
+ 
+
+Let Y stand for the output bit and A, B, C, D for input bits.
+Then the truth table has input words of 0000, 0001, 0010,
+..., L111, as shown in Table 2-5. As expected, output Y
+is O for input word 0000; Y is 1 for all other input words.
+
+As a check, the number of input words in a truth table
+always equals 2”, where n is the number of input bits. A
+2-input OR gate has a truth table with 2? or 4 input words;
+a 3-input OR gate has 23 or 8 input words; and a 4-input
+OR gate has 24 or 16 input words.
+
+ 
+
+TABLE 2-5. FOUR-INPUT or
+
+ 
+
+ 
+
+GATE
+A B Cc D Y
+0 0 0 0 0
+0 0 0 1 1
+0 0 1 0 1
+0 0 1 1 1
+0 1 0 0 1
+0 1 0 1 1
+0 1 1 0 1
+0 1 1 1 1
+1 0 0 0 1
+1 0 0 1 1
+1 0 i 0 1
+1 0 1 1 1
+1 1 0 0 1
+1 1 0 1 1
+1 1 1 0 1
+1 | 1 i 1
+
+ 
+
+ 
+
+ 
+
+EXAMPLE 2-3
+
+How many inputs words are in the truth table of an 8-input
+OR gate? Which input words produce a high output?
+
+SOLUTION
+
+ 
+
+The input words are 0000 0000, 0000 0001, ..., L1EI
+1111. With the formula of the preceding example, the total
+number of input words is 2” = 28 = 256.
+
+In any oR gate, 1 or more high inputs produce a high
+output. Therefore, the input word of 0000 0000 results in
+a low output; all other input words produce a high output.
+
+ 
+
+EXAMPLE 2-4
+
++5V
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+¥3 Y% % Yo
+
+Fig. 2-7 Decimal-to-binary encoder.
+
+The switches of Fig. 2-7 are push-button switches like those
+of a pocket calculator. The bits out of the or gates form a
+4-bit word, designated Y;Y,Y,Yo. What does the circuit
+do?
+
+SOLUTION
+
+ 
+
+Figure 2-7 is a decimal-to-binary encoder, a circuit that
+converts decimal to binary. For instance, when push button
+3 is pressed, the Y, and Yg OR gates have high inputs;
+therefore, the output word is
+
+Y3Y,Y,Yo = 0011
+
+Chapter 2 Gates 21
+ 
+
+If button 5 is keyed, the Y, and Yp OR gates have high
+inputs and the output word becomes
+
+Y3Y2Y,;Yo = O101
+When switch 9 is pressed,
+Y3Y2Y,Yo = 1001
+Check the other input switches to convince yourself that
+
+the output word always equals the binary equivalent of the
+switch being pressed.
+
+ 
+
+2-3 AND GATES
+
+The AND gate has two or more input signals but only one
+output signal. All inputs must be high to get a high output.
+
++5V +5 V
+
+Ao—kK}-—
+
+ 
+
+ 
+
+Bo——kK}—_—
+
+fa)
+
+ 
+
+ 
+
+(e} (d}
+
+Fig. 2-8 A 2-input AND gate. (a) circuit; (b) both inputs low; (c)1
+low input, | high; (@) both inputs high.
+
+Diode AND Gate
+
+Figure 2-8a shows one way to build an AND gate. In this
+circuit the inputs can be either low (ground) or high (+5
+V). When both inputs are low (Fig. 2-8b), both diodes
+conduct and pull the output down to a low voltage. If one
+of the inputs is low and the other high (Fig. 2-8c), the
+diode with the low input conducts and this pulls the output
+down to a low voltage. The diode with the high input, on
+the other hand, is reverse-biased or cut off, symbolized by
+the dark shading in Fig. 2-8c.
+
+When both inputs are high (Fig. 2-8d), both diodes are
+cut off. Since there is no current in the resistor, the supply
+voltage pulls the output up to a high voltage (+5 V).
+
+22 Digital Computer Electronics
+
+ 
+
+TABLE 2-6. TWO-
+INPUT anp GATE
+
+ 
+
+ 
+
+A B Y
+0 0 0
+0 1 0
+1 0 0
+1 1 1
+
+ 
+
+ 
+
+Table 2-6 summarizes the action. As usual, binary zero
+stands for low voltage and binary | for high voltage. As
+you see, A and B must be high to get a high output; this is
+why the circuit is called an AND gate.
+
++5V
+
+Ao—K}—
+8o—_¢<}—+ y
+
+co—_k}—_
+Fig. 2-9 A 3-input AND gate.
+
+ 
+
+More than Two Inputs
+
+Figure 2-9 is a 3-input AND gate. If all inputs are low, all
+diodes conduct and pull the output down to a low voltage.
+Even one conducting diode will pull the output down to a
+low voltage; therefore, the only way to get a high output
+is to have all inputs high. When all inputs are high, all
+diodes are nonconducting and the supply voltage pulls the
+output up to a high voltage.
+
+Table 2-7 summarizes the 3-input AND gate. The output
+is Q for all input words except 111. That is, all inputs must
+be high to get a high output.
+
+AND gates can have as many inputs as desired; add one
+diode for each additional input. Eight diodes, for instance,
+result in-an 8-input AND gate; sixteen diodes in a 16-input
+
+TABLE 2-7. THREE-
+INPUT anp GATE
+
+ 
+
+ 
+
+A B Cc Y
+0 0 0 0
+0 0 1 0
+0 1 0 0
+0 1 1 0
+1 0 0 0
+1 0 1 0
+I 1 0 0
+1 1 1 1
+
+ 
+
+ 
+jt)- 4)- 3 >-
+
+fa) (b) {ce}
+Fig. 2-10 anb-gate symbols.
+
+ 
+
+ 
+
+Hi
+
+ 
+
+AND gate. No matter how many inputs an AND gate has,
+the action can be summarized like this: All inputs must be
+high to get a high output.
+
+Figure 2-10 shows the logic symbols for 2-, 3-, and 4-
+input AND gates.
+
+ 
+
+EXAMPLE 2-5
+
+Describe the truth table of an 8-input AND gate.
+
+SOLUTION
+
+ 
+
+The input words are from 0000 0000 to 1111 1111, following
+the binary progression. The total number of input words is
+
+2" = 28 = 256
+The first 255 input words produce a 0 output. Only the last
+
+word, 1111 1111, results in a 1 output. This is because all
+inputs must be high to get a high output.
+
+ 
+
+EXAMPLE 2-6
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+6-bit register
+A B Cc D E F
+° * ° ¢ ® ENABLE |
+Ys, Yg Y¥3 Yy % Yo
+
+Fig. 2-11 Using AND gates to block or transmit data.
+
+The 6-bit register of Fig. 2-11 stores the word ABCDEF.
+The ENABLE input can be low or high. What does the
+circuit do?
+
+SOLUTION
+
+ 
+
+One use of AND gates is to transmit data when certain
+conditions are satisfied. In Fig. 2-11 a low ENABLE blocks
+the register contents from the final output, but a high
+ENABLE transmits the register contents.
+
+For instance, when
+ENABLE = 0
+each AND gate has a low ENABLE input. No matter what
+
+the register contents, the output of each AND gate must be
+low. Therefore, the final word is
+
+YsYsY3Y2Y,;Yo = 000000
+As you see, a low ENABLE blocks the register contents
+from the final output.
+
+On the other hand, when
+ENABLE = 1
+
+the output of each AND gate depends on the data inputs (A,
+B,C, .. .); a low data input results in a low output, and
+a high data input in a high output. For example, if ABCDEF
+= 100100, a high ENABLE gives
+
+YsY4Y3Y2Y,;Yo = 100100
+
+In general, a high ENABLE transmits the register contents
+to the final output to get
+
+Y;Y,Y3YY,Y, = ABCDEF
+
+ 
+
+2-4 BOOLEAN ALGEBRA
+
+As mentioned earlier, Boole invented two-state algebra to
+solve logic problems. This new algebra had no practical
+use until Shannon applied it to telephone switching circuits.
+Today boolean algebra is the backbone of computer circuit
+analysis and design.
+
+Inversion Sign
+
+In boolean algebra a variable can be either a 0 or a 1. For
+digital circuits, this means that a signal voltage can be
+either low or high. Figure 2-12 is an example of a digital
+circuit because the input and output voltages are either low
+or high. Furthermore, because of the inversion, Y is always
+the complement of A.
+
+s—>o—
+
+A word equation for Fig. 2-12 is
+
+Fig. 2-12 Inverter.
+
+Y = NOTA (2-1)
+
+Chapter 2 Gates 23
+
+ 
+If A is 0,
+
+ll
+_
+
+Y = not 0
+On the other hand, if A is 1,
+
+0
+
+Y = noTl
+
+In boolean algebra, the overbar stands for the NOT
+operation. This means that Eq. 2-1 can be written
+
+Y=A (2-2)
+Read this as ‘‘Y equals Nor A”’ or ‘‘Y equals the complement
+of A.’’ Equation 2-2 is the standard way to write the output
+of an inverter.
+
+Using the equation is easy. Given the value of A, substitute
+and solve for Y. For instance, if A is 0,
+
+because NOT 0 is 1. On the other hand, if A is 1,
+Y=A=1=0
+because NOT | is 0.
+
+A
+Y
+8
+
+Fig. 2-13 or gate.
+
+OR Sign
+A word equation for Fig. 2-13 is
+
+Y = AorB (2-3)
+
+Given the inputs, you can solve for the output. For instance,
+ifA = OandB = 0,
+
+Y=Oor0=0
+
+because 0 comes out of an OR gate when both inputs are
+Os.
+As another example, if A = 0 and B = 1,
+
+Y=Oor1!1=1
+
+because 1 comes out of an OR gate when either input is 1.
+Similarly, if A = 1 and B = 0,
+
+Y=1orO=1
+IfA = | and B = 1,
+Y= 1ori=1
+
+24 Digital Computer Electronics
+
+In boolean algebra the + sign stands for the OR operation.
+In other words, Eq. 2-3 can be written
+
+Y=A+B (2-4)
+
+' Read this as ‘‘Y equals A or B.’’ Equation 2-4 is the
+
+standard way to write the output of an or gate.
+Given the inputs, you can substitute and solve for the
+output. For instance, if A = 0 and B = 0,
+
+Y=A+B=0+02=0
+iA = OandB = 1,
+Y=A+B=0+1=1
+
+because 0 oRed with | results in 1. If A = 1 and B = 0,
+
+Y=A+B=1+0F=1
+If both inputs are high,
+Y=A+B=14+1=1
+
+because 1 oRed with 1 gives 1.
+
+Don’t let the new meaning of the + sign bother you.
+There’s nothing unusual about symbols having more than
+one meaning. For instance, “‘pot’’ may mean a cooking
+utensil, a flower container, the money wagered in a card
+game, a derivative of cannabis sativa and so forth; the
+intended meaning is clear from the sentence it’s used in.
+Similarly, the + sign may stand for ordinary addition or
+oR addition; the intended meaning comes across in the way
+it’s used. If we’re talking about decimal numbers, + means
+ordinary addition, but when the discussion is about logic
+circuits, + stands for oR addition.
+
+—D-
+Y
+8—
+
+ 
+
+Fig. 2-14 anp gate.
+
+AND Sign
+
+A word equation for Fig. 2-14 is
+Y = AANDB (2-5)
+
+In boolean algebra the multiplication sign stands for the
+AND operation. Therefore, Eq. 2-5 can be written
+
+Y=A-B
+or simply
+
+Y = AB (2-6)
+Read this as “‘Y equals A AND B.’’ Equation 2-6 is the
+standard way to write the output of an AND gate.
+Given the inputs, you can substitute and solve for the
+output. For instance, if both inputs are low,
+Y=AB=0:0=0
+because 0 ANDed with 0 gives 0. If A is low and B is high,
+Y=AB=0:-1=0
+
+because 0 comes out of an AND gate if any input is 0. If A
+is 1 and B is 0,
+
+Y=AB=1-:0=0
+When both inputs are high,
+
+Y=AB=1-:1
+
+il
+—
+
+because 1 ANDed with | gives 1.
+
+Decision-Making Elements
+
+The inverter, OR gate, and AND gate are often called
+decision-making elements because they can recognize some
+input words while disregarding others. A gate recognizes a
+word when its output is high; it disregards a word when its
+output is low. For example, the AND gate disregards all
+words with one or more Os; it recognizes only the word
+whose bits are all 1s.
+
+Notation
+
+In later equations we need to distinguish between bits that
+are ANDed and bits that are part of a binary word. To do
+this we will use italic (slanted) letters (A, B, Y, etc.) for
+ANDed bits and roman (upright) letters (A, B, Y, etc.) for
+bits that form a word.
+
+For example, Y3;Y,Y,Y) stands for the logical product
+(ANDing) of ¥3, Y,, Y;, and Yo. If Y¥; = 1, ¥, = 0, Y, =
+0, and Y, = 1, the product Y;¥,Y,Y, will reduce as follows:
+
+Y5V¥Y =1°0-0°1=0 Cir yr
+
+In this case, the italic letters represent bits that are being
+ANDed.
+
+On the other hand, Y;Y,Y,Y, is our notation for a 4-bit
+word. With the Y values just given, we can write
+
+Y3Y2Y,;Yo = 1001
+In this equation, we are not dealing with bits that are
+
+ANDed; instead, we are dealing with bits that are part of a
+word.
+
+The distinction between italic and roman notation will
+become clearer when we get to computer analysis.
+
+Positive and Negative Logic
+
+A final point. Positive logic means that | stands for the
+more positive of the two voltage levels. Negative logic
+means that | stands for the more negative of the two voltage
+levels. For instance, if the two voltage levels are 0 and — 5
+V, positive logic would have 1 stand for 0 V and 0 for —5
+V, whereas negative logic would have | stand for —5 V
+and 0 for 0 V.
+
+Ordinarily, people use positive logic with positive supply
+voltages and negative logic with negative supply voltages.
+Throughout this book, we will be using positive logic.
+
+ 
+
+EXAMPLE 2-7
+
+A :
+B Y
+
+fa)
+
+‘
+| >O—— y
+B—
+
+(b)
+
+ 
+
+Fig. 2-15 Logic circuits.
+
+What is the boolean equation for Fig. 2-15a? The output if
+both inputs are high?
+
+SOLUTION
+
+ 
+
+A is inverted before it reaches the OR gate; therefore, the
+upper input to the OR gate is A. The final output is
+
+This is the boolean equation for Fig. 2-15a.
+
+To find the output when both inputs are high, either of
+two approaches can be used. First, you can substitute
+directly into the foregoing equation and solve for Y
+
+Y=A+B=1+1=0+1=-1
+
+Alternatively, you can analyze the operation of Fig. 2-15a
+like this. If both inputs are high, the inputs to the or gate
+are 0 and 1. Now, 0 ored with | gives 1. Therefore, the
+final output is high.
+
+ 
+
+EXAMPLE 2-8
+
+What is the boolean equation for Fig. 2-15b? If both inputs
+are high, what is the output?
+
+Chapter 2 Gates 25
+ 
+
+SOLUTION
+
+ 
+
+The AND gate forms the logical product AB, which is
+inverted to get
+
+Y = AB
+
+Read this as ‘‘Y equals NoT AB”’ or ‘‘Y equals the
+complement of AB.”’
+
+If both inputs are high, direct substitution into the equation
+gives
+
+y=4B=T-1=1=0
+
+Note the order of operations: the ANDing is done first, then
+the inversion.
+
+Instead of using the equation, you can analyze Fig.
+2-15b as follows. If both inputs are high, the AND gate has
+a high output. Therefore, the final output is low.
+
+ 
+
+EXAMPLE 2-9
+
+ 
+
+A—
+B—
+
+c—J
+
+ 
+
+fa)
+
+pp”
+
+(b)
+
+ 
+
+ 
+
+Fig. 2-16 Logic circuits.
+
+What is the boolean equation for Fig. 2-16a? The truth
+table? Which input words does the circuit recognize?
+
+SOLUTION
+
+ 
+
+The upper AND gate forms the logical product AB, and the
+lower AND gate gives CD. oring these products results in
+
+Y = AB + CD
+
+Read this as ‘‘Y equals AB OR CD.”
+Next, look at Fig. 2-16a. The final output is high if the
+OR gate has one or more high inputs. This happens when
+
+AB is 1, CD is 1, or both are ls. In turn, AB is 1 when
+
+A= 1 and B=1
+
+26 Digital Computer Electronics
+
+TABLE 2-8. TRUTH TABLE
+FOR Y = AB + CD
+
+ 
+
+ 
+
+eee ee ee eRecoooooocoe >
+BeeePoocoocorerHrF OToOo|S
+BRrPoorHoorrFooOrRKP Co IN
+KHoOorororororororoc [YB
+eee reroodordcordeoceooe me
+
+ 
+
+ 
+
+CD is 1 when
+
+Both products are 1s when
+A= 1 B= 1 c= 1 and D=1
+
+Therefore, the final output is high when A and B are Is,
+when C and D are 1s, or when ali inputs are Is.
+
+Table 2-8 summarizes the foregoing analysis. From this
+it’s clear that the circuit recognizes these input words: 0011,
+O111, 1011, 1100, 1101, 1110, and 1111.
+
+ 
+
+EXAMPLE 2-10
+
+Write thé boolean equation for Fig. 2-165. If all inputs are
+high, what is the output?
+
+SOLUTION
+
+ 
+
+The or gate forms the logical sum B + C. This sum is
+ANDed with A to get
+
+Y = A(B + C)
+(Parentheses indicate ANDing.)
+One way to find the output when all inputs are high is
+
+to substitute and solve as follows:
+
+Y=AB+CO=10+)=1=1
+Alternatively, you can analyze Fig. 2-16 like this. If all
+inputs are high, the oR gate has a high output; therefore,
+both inputs to the AND gate are high. Since all high inputs
+to an AND gate result in a high output, the final output is
+high.
+
+ 
+
+EXAMPLE 2-11
+
+ 
+ 
+
+4-bit register
+
+ 
+   
+
+ 
+
+B c
+
+ 
+
+Fig. 2-17 A 1-of-10 decoder.
+
+What is the boolean equation for each Y output in Fig.
+2-17?
+
+SOLUTION
+
+ 
+
+Each AND gate forms the logical product of its input signals.
+
+The inputs to the top AND gate are A, B, C and D; therefore,
+Yo = ABCD
+
+The inputs to the next AND gate are A, B, C and D; this
+means that
+
+Y, = ABCD
+
+Analyzing the remaining gates gives
+
+Y,= ABCD
+Y,; = ABCD
+Y, = ABCD
+Y; = ABCD
+Y¥,= ABCD
+Y, = ABCD
+Y, = ABCD
+Y, = ABCD
+
+ 
+
+EXAMPLE 2-12
+What does the circuit of Fig. 2-17 do?
+
+SOLUTION
+
+ 
+
+This is a binary-to-decimal decoder, a circuit that converts
+from binary to decimal. For instance, when the register
+contents are 0011, the ¥Y; AND gate has all high inputs;
+therefore, Y; is high. Furthermore, register contents of 0011
+mean that all other AND gates have at least one low input.
+As a result, all other AND gates have low outputs. (Analyze
+the circuit to convince yourself.)
+
+If the register contents change to 0100, only the Y, AND
+gate has all high inputs; therefore, only Y, is high. If the
+register contents change to 0111, Y; is the only high output.
+
+In general, the subscript of the high output equals the
+decimal equivalent of the binary number stored in the
+register. This is why the circuit is called a binary-to-decimal
+decoder.
+
+The circuit of this example is also called a 4-line-to—10-
+line decoder because there are 4 input lines and 10 output
+lines. Another name for it is a 1-of-10 decoder because
+only 1 of 10 output lines has a high voltage.
+
+ 
+
+GLOSSARY
+
+ 
+
+AND gate A logic circuit whose output is high only when
+all inputs are high.
+
+boolean algebra Originally known as symbolic logic, this
+modern algebra uses the set of numbers 0 and 1. The
+
+Chapter2 Gates 27
+ 
+
+ 
+
+operations OR, AND, and NOT are sometimes called union,
+intersection, and inversion. Boolean algebra is ideally suited
+to digital circuit analysis.
+
+complement The output of an inverter.
+
+gate A logic circuit with one or more input signals but
+only one output signal.
+
+inverter A gate with only | input and 1 output. The output
+is always the complement of the input. Also known as a
+NOT gate.
+
+logic circuit A circuit whose input and output signals are
+
+two-state, either low or high voltages. The basic logic
+circuits are OR, AND, and NOT gates.
+
+OR gate A logic circuit with 2 or more inputs and only |
+output; 1 or more high inputs produce a high output.
+truth table A table that shows all input and output
+possibilities for a logic circuit. The input words are listed
+in binary progression.
+
+word A string of bits that represent a coded instruction
+or data.
+
+SELF-TESTING REVIEW
+
+Read each of the following and provide the missing words.
+Answers appear at the beginning of the next question.
+
+1. A gate is a logic circuit with one or more input
+signals but only output signal. These
+signals are either or high.
+
+2. (one, low) An inverter is a gate with only
+input; the output is always in the opposite state from
+the input. An inverter is also called a
+gate. Sometimes the output is referred to as the
+complement of the input.
+
+3. (J, NoT) The or gate has two or more input signals.
+If any input is , the output is high. The
+number of input words in a truth table always equals
+
+__________, where n is the number of input bits.
+
+4. (high, 2") The gate has two or more
+
+input signals. All inputs must be high to get a high
+output.
+
+5. (AND) In boolean algebra, the overbar stands for the
+
+NOT operation, the plus sign stands for the
+operation, and the times sign for the
+operation.
+
+6. (OR, AND) The inverter, OR gate, and AND gate are
+
+called decision-making elements because they can
+recognize some input while disregarding
+others. A gate recognizes a word when its output is
+
+7. (words, high) A binary-to-decimal decoder is also
+
+called a 4-line-to—10-line decoder because it has 4
+input lines and 10 output lines. Another name for it
+is the 1-of-10 decoder because only 1 of its 10 output
+lines is high at a time.
+
+PROBLEMS
+
+2-1. How many inputs signals can a gate have? How
+many output signals?
+
+2-2. If you cascade seven inverters, does the overall
+circuit act like an inverter or noninverter?
+
+2-3. Double inversion occurs when two inverters are
+cascaded. Does such a connection act like an
+inverter or noninverter?
+
+2-4, The contents of the 6-bit register in Fig. 2-3b
+change to 101010. What is the decimal equivalent
+of the register contents? The decimal equivalent
+out of the hex inverter?
+
+2-5. An or gate has 6 inputs. How many input words
+are in its truth table? What is the only input word
+that produces a 0 output?
+
+2-6. Figure 2-18 shows a hexadecimal encoder, a cir-
+cuit that converts hexadecimal to binary. Press-
+ing each push-button switch results in a differ-
+ent output word Y3Y,Y,Yo. Starting with switch
+0, what are the output words? (NOTE: The new
+symbol in Fig. 2-18 is another way to draw an OR
+gate.
+
+28 Digital Computer Electronics
+
+2-7. In Fig. 2-18 what switches would you press to
+produce
+
+0011 1001 1100 1111
+
+(Work from left to right.)
+2-8. What is the 4-bit output in Fig. 2-18 when switch
+A is pressed? Switch 4? Switch E? Switch 6?
+2-9. An AND gate has 7 inputs. How many input
+words are in its truth table? What is the only
+input word that produces a | output?
+
+2-10. Visualize the register contents of Fig. 2-19 as the
+word AjA, °° * Ao, and the final output as the
+word Y7Y, °° * Yo. What is the output word for
+each of the following conditions:
+
+a. AjAg: ++ Ap = 1100 1010, ENABLE
+b. A ,Ag +. * Ag = 0101 1101, ENABLE
+c. AjAg:: + Ag = 1111 0000, ENABLE
+d. AjAg- ++ Ag = 1010 1010, ENABLE =
+
+ll
+Orr Oo
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+LL Lt us T J
+¥3 Yo % Yo
+Fig. 2-18 Hexadecimal encoder.
+8-bit register
+A
+y
+. fa)
+? ° ° ¢ ° + * ENABLE
+A
+J >:
+c
+% % ¥5 Yq Ys % Y % (b)
+Fig. 2-19 Fig. 2-20
+2-11. The 8-bit register of Fig. 2-19 stores 5919. What 2-13. What is the boolean equation for Fig. 2-20a? The
+is the decimal equivalent of the final output word output if both inputs are high?
+if ENABLE = 0? If ENABLE = 1? 2-14, If all inputs are high in Fig. 2-20b, what is the
+2-12. Answer these questions: output? The boolean equation for the circuit?
+a. What input words does a 6-input oR gate What is the only ABC input word the circuit
+recognize? What word does it disregard? recognizes?
+b. What input word does an 8-input AND gate 2-15. If you constructed the truth table for Fig. 2-205,
+
+recognize? What words does it disregard?
+
+how many input words would it contain?
+
+Chapter 2 Gates 29
+Instruction register
+
+LDA
+ADD
+SUB
+Fig. 2-21
+STA
+LDB
+
+LDX
+
+JMP
+
+ 
+
+JAM
+
+JAZ
+
+JIM
+
+ 
+
+JIZ
+Fig. 2-22
+JMS
+DSZ
+ISZ
+
+MIX
+
+OPR
+
+ 
+
+ 
+
+ 
+
+Fig. 2-23 Fig. 2-25 A 1-of-16 decoder.
+
+A
+
+ 
+
+B
+
+ 
+
+Cc
+
+ 
+
+D
+Fig. 2-24
+
+ 
+
+ 
+
+30 Digital Computer Electronics
+2-16.
+
+2-17.
+
+2-18.
+
+2-19,
+
+2-20.
+
+2-21.
+
+2-22.
+
+What is the boolean equation for Fig. 2-21a? The
+output if both inputs are high?
+If all inputs are high in Fig. 2-215, what is the
+output? What is the boolean equation of the cir-
+cuit? What ABC input words does the circuit
+recognize? What is the only word it disregards?
+What is the boolean equation for Fig. 2-22a’? The
+output if all inputs are 1s? If you were to con-
+struct the truth table, how many input words
+would it have?
+Write the boolean equation for Fig. 2-22b. If all
+inputs are 1s, what is the output?
+If both inputs are high in Fig. 2-23, what is the
+output? What is the boolean equation for the cir-
+cuit? Describe the truth table.
+What is the boolean equation for Fig. 2-24? How
+many ABCD input words are in the truth table?
+Which input words does the circuit recognize?
+Because of the historical connection between bool-
+ean algebra and logic, some people use the words
+“‘true’’ and ‘‘false’’ instead of ‘‘high’’ and
+‘‘low’’ when discussing logic circuits. For in-
+stance, here’s how an AND gate can be described.
+If any input is false, the output is false; if all
+inputs are true, the output is true.
+a. If both inputs are false in Fig. 2-23, what is
+the output?
+b. What is the output in Fig. 2-23 if one input is
+false and the other true?
+c. In Fig. 2-23 what is the output if all inputs are
+true?
+
+2-23.
+
+2-24.
+
+2-25,
+
+2-26.
+
+2-27.
+
+Figure 2-25 shows a 1-of-16 decoder. The signals
+coming out of the decoder are labeled LDA,
+ADD, SUB, and so on. The word formed by the 4
+leftmost register bits is called the OP CODE. As
+an equation,
+
+OP CODE = Tishialishia
+
+a. If LDA is high, what does OP CODE equal?
+. If ADD is high, what does it equal?
+
+c. When OP CODE = 1001, which of the output
+signals is high?
+
+d. Which output signal is high if OP CODE =
+1111?
+
+In Fig. 2-25, list the OP CODE words and the
+
+corresponding high output signals. (Start with
+
+0000 and proceed in binary to 1111.)
+
+In the following equations the equals sign means
+
+““is equivalent to.’’ Classify each of the following
+
+as positive or negative logic:
+
+a 0=OVand1 = +5V.
+
+b. O= +5 Vand1 =O0V.
+c. O= -SVand1=O0V.
+d. 0=OVand1 = —SV.
+
+In Fig. 2-25 four output lines come from the
+decoder. Is it possible to add more op codes
+without increasing the number of output lines?
+How many output lines from the decoder would
+be needed to have 256 op codes?
+
+Chapter 2 Gates 31
+
+ 
+ 
+
+ 
+
+-)>-
+
+ 
+
+ 
+
+ 
+
+-
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+MORE LOGIC GATES
+
+This chapter introduces NOR and NAND gates, devices that
+are widely used in industry. You will also learn about De
+Morgan’s theorems; they help you to rearrange and simplify
+logic circuits.
+
+3-1 NOR GATES
+
+The NOR gate has two or more input signals but only one
+output signal. All inputs must be low to get a high output.
+In other words, the NOR gate recognizes only the input
+word whose bits are all Os.
+
+A A
+Y . Y
+8 B
+
+(a) (b)
+Fig. 3-1 Nor gate: (a) logical meaning; (6) standard symbol.
+
+Two-Input Gate
+
+Figure 3-la shows the logical structure of a NOR gate,
+which is an OR gate followed by an inverter. Therefore,
+the final output is NoT the oR of the inputs. Originally
+called a NOT-OR gate, the circuit is now referred to as a
+NOR gate.
+
+Figure 3-1b is the standard symbol for a NOR gate. Notice
+that the inverter triangle has been deleted and the small
+circle or bubble moved to the OR-gate output. The bubble
+is a reminder of the inversion that follows the oring.
+
+With Fig. 3-la@ and b the following ideas are clear. If
+both inputs are low, the final output is high. If one input
+is low and the other high, the output is low. And if both
+inputs are high, the output is low.
+
+Table 3-1 summarizes the circuit action. As you see, the
+NOR gate recognizes only the input word whose bits are all
+Os. In other words, all inputs must be low to get a high
+output.
+
+32
+
+TABLE 3-1. TWO-
+INPUT nor GATE
+
+ 
+
+A B A+B
+0 0 1
+0 i 0
+1 0 0
+1 1 0
+
+ 
+
+Incidentally, the boolean equation for a 2-input NOR gate
+is
+
+ 
+
+Y=A+B (3-1)
+
+Read this as ‘‘Y equals NoT A or B.”’ If you use this
+equation, remember that the ORing is done first, then the
+inversion.
+
+=
+
+fa} (b)
+Fig. 3-2 Nor gates: (a) 3-input; (b) 4-input.
+
+Onob
+oOo B
+
+Three-Input Gate
+
+Regardless of how many inputs a NOR gate has, it is still
+logically equivalent to an OR gate followed by an inverter.
+For instance, Fig. 3-2a shows a 3-input NOR gate. The 3
+inputs are ORed, and the result is inverted. Therefore, the
+boolean equation is
+
+Y=A+B+C (3-2)
+
+The analysis of Fig. 3-2a goes like this. If all inputs are
+low, the result of oRing is low; therefore, the final output
+TABLE 3-2. THREE-INPUT
+NOR GATE
+
+ 
+
+A+B+C
+
+ 
+
+Fee OOO].
+Bre ooreHoolsy
+
+Cc
+0
+1
+0
+1
+0
+1
+0
+1
+
+ 
+
+ooooocor
+
+ 
+
+is high. If one or more inputs are high, the result of Ring
+is high; so the final output is low.
+
+Table 3-2 summarizes the action of a 3-input NOR gate.
+As you see, the circuit recognizes only the input word
+whose bits are Os. In other words, all inputs must be low
+to get a high output.
+
+Four-Input Gate
+
+Figure 3-2b is the symbol for a 4-input NoR gate. The
+inputs are ORed, and the result is inverted. For this reason,
+the boolean equation is
+
+Y=A+B+C+D (3-3)
+
+The corresponding truth table has input words from 0000
+to 1111. Word 0000 gives a 1 output; all other words
+produce a 0 output. (For practice, you should construct the
+truth table of the 4-input NoR gate.)
+
+3-2 DE MORGAN’S FIRST THEOREM
+
+Most mathematicians ignored boolean algbebra when it first
+appeared; some even ridiculed it. But Augustus De Morgan
+saw that it offered profound insights. He was the first to
+acclaim Boole’s great achievement.
+
+Always a warm and likable man, De Morgan himself
+had paved the way for boolean algebra by discovering two
+important theorems. This section introduces the first theo-
+rem.
+
+The First Theorem
+
+Figure 3-3a is a 2-input NoR gate, analyzed earlier. As you
+recall, the boolean equation is
+
+ 
+
+Y=A+B
+
+and Table 3-3 is the truth table.
+
+ 
+
+(b}
+Fig. 3-3 De Morgan’s first theorem: (a) NOR gate; (b) AND gate
+with inverted inputs.
+
+Figure 3-3b has the inputs inverted before they reach the
+AND gate. Therefore, the boolean equation is
+
+Y=AB
+
+If both inputs are low in Fig. 3-3b, the AND gate has high
+inputs; therefore, the final output is high. If one or more
+inputs are high, one or more AND-gate inputs must be low
+and the final output is low. Table 3-4 summarizes these
+ideas.
+
+ 
+
+ 
+
+ 
+
+TABLE 3-3 TABLE 3-4
+A Bl] A+B A B| AB
+0 0 1 0 Oo; 1
+0 1 0 0 1] O
+1 0 0 1 0] oO
+1 1 0 i 1] 0
+
+ 
+
+ 
+
+ 
+
+Compare Tables 3-3 and 3-4. They’re identical. This
+means that the two circuits are logically equivalent; given
+the same inputs, the outputs are the same. In other words,
+the circuits of Fig. 3-3 are interchangeable.
+
+De Morgan discovered the foregoing equivalence long
+before logic circuits were invented. His first theorem says
+
+ 
+
+A+B=AB (3-4)
+
+The left member of this equation represents Fig. 3-3a; the
+right member, Fig. 3-3b. Equation 3-4 says that Fig. 3-3a
+and b are equivalent (interchangeable).
+
+Bubbled AND Gate
+
+Figure 3-4a shows an AND gate with inverted inputs. This
+circuit is so widely used that the abbreviated logic symbol
+of Fig. 3-4b has been adopted. Notice that the inverter
+triangles have been deleted and the bubbles moved to the
+
+Chapter 3 More Logic Gates 33
+ 
+
+ 
+
+Det
+
+ 
+
+sd
+
+(b}
+
+Fig. 3-4 anp gate with inverted inputs: (a) circuit; (b) abbreviated
+symbol.
+
+AND-gate inputs. From now on, we will refer to Fig.
+3-4b as a bubbled AND gate; the bubbles are a reminder of
+the inversion that takes place before ANDing.
+
+>- - =D
+
+Fig. 3-5 De Morgan’s first theorem.
+
+Figure 3-5 is a graphic summary of De Morgan’s first
+theorem. A NoR gate and a bubbled AND gate are equivalent.
+As shown later, because the circuits are interchangeable,
+you can often reduce complicated logic circuits to simpler
+forms.
+
+ 
+
+More than Two Inputs
+When 3 inputs are involved, De Morgan’s first theorem is
+
+written
+
+A+B+C=ABC (3-5)
+For 4 inputs
+
+A+B+C+D=ABCD (3-6)
+
+In both cases, the theorem says that the complement of a
+sum equals the product of the complements.
+
+> =D!
+>>:
+
+ 
+
+“i
+
+|
+
+Fig. 3-6 De Morgan’s first theorem: (a) 3-input circuits; (b) 4-
+input circuits.
+
+ 
+
+“LLL
+
+34 Digital Computer Electronics
+
+Here’s what really counts. Equation 3-5 says that a 3-
+input NOR gate and a 3-input bubbled AND gate are equivalent
+(see Fig. 3-6a). Equation 3-6 means that a 4-input NOR
+gate and a 4-input bubbled AND gate are equivalent (Fig.
+3-6b). Memorize these equivalent circuits; they are a visual
+statement of De Morgan’s first theorem.
+
+Notice in Fig. 3-6b how the input edges of the NoR gate
+and the bubbled AND gate have been extended. This is
+common drafting practice when there are many input signals.
+The same idea applies to any type of gate.
+
+ 
+
+EXAMPLE 3-1
+
+Prove that Fig. 3-7a and c are equivalent.
+
+ 
+
+(b)
+
+ 
+
+fc)
+Fig. 3-7 Equivalent De Morgan circuits.
+
+SOLUTION
+
+ 
+
+The final Nor gate in Fig. 3-7a is equivalent to a bubbled
+AND gate. This allows us to redraw the circuit as shown in
+Fig. 3-75.
+
+Double inversion produces noninversion; therefore, each
+double inversion in Fig. 3-7b cancels out, leaving the
+simplified circuit of Fig. 3-7c. Figure 3-7a and c are
+therefore equivalent.
+
+Remember the idea. Given a logic circuit, you can replace
+any NOR’ gate by a bubbled AND gate. Then any double
+inversion (a pair of bubbles in a series path) cancels out.
+Sometimes you wind up with a simpler logic circuit than
+you started with; sometimes not.
+
+But the point remains. De Morgan’s first theorem enables
+you to rearrange a logic circuit with the hope of finding a
+simpler equivalent circuit or perhaps getting more insight
+into how the original circuit works.
+
+ 
+
+3-3 NAND GATES
+
+The NAND gate has two or more input signals but only one
+output signal. All input signals must be high to get a low
+output.
+A A
+¥ 4
+8—— @ —~+
+
+fa) (b}
+Fig. 3-8 NAND gate: (a) logical meaning; (b) standard symbol.
+
+ 
+
+ 
+
+ 
+
+ 
+
+Two-Input Gate
+
+Figure 3-8a shows the logical structure of a NAND gate, an
+AND gate followed by an inverter. Therefore, the final
+output is NOT the AND of the inputs. Originally called a
+NOT-AND gate, the circuit is now referred to as a NAND
+gate.
+
+Figure 3-8b is the standard symbol for a NAND gate. The
+inverter triangle has been deleted and the bubble moved to
+the AND-gate output. If one or more inputs are low, the
+result of ANDing is low; therefore, the final inverted output
+is high. Only when all inputs are high does the ANDing
+produce a high signal; then the final output is low.
+
+Table 3-5 summarizes the action of a 2-input NAND gate.
+As shown, the NAND gate recognizes any input word with
+one or more Os. That is, one or more low inputs produce
+a high output. The boolean equation for a 2-input NAND
+gate is
+
+Y = AB (3-7)
+
+Read this as ‘‘Y equals NoT AB.”’ If you use this equation,
+remember that the ANDing is done first then the inversion.
+
+=D D>
+
+fa} (b)
+Fig. 3-9 NAND gates: (a) 3-input; (b) 4-input.
+
+ 
+
+ 
+
+Three-Input Gate
+
+Regardless of how many inputs a NAND gate has, it’s still
+logically equivalent to an AND gate followed by an inverter.
+For example, Fig. 3-9a shows a 3-input NAND gate. The
+inputs are ANDed, and the product is inverted. Therefore,
+the boolean equation is
+
+Y = ABC (3-8)
+
+Here is the analysis of Fig. 3-9a. If one or more inputs
+are low, the result of ANDing is low; therefore, the final
+output is high. If all inputs are high, the ANDing gives a
+high signal; so the final output is low.
+
+Table 3-6 is the truth table for a 3-input NAND gate. As
+indicated, the circuit recognizes words with one or more
+Os. This means that one or more low inputs produce a high
+output.
+
+ 
+
+ 
+
+TABLE 3-5. TABLE 3-6. THREE-
+TWO-INPUT INPUT NAND GATE
+NAND GATE
+
+A B C| ABC
+A B| AB
+
+0 0 0 1
+0 0 1 0 0 1 1
+0 1 1 0 1 0 1
+1 0 1 0 1 1 1
+1 1 0 1 0 0 1
+
+1 O 1 1
+
+1 1 O 1
+
+1 1 1 0
+
+ 
+
+Four-Input Gate
+
+Figure 3-9b is the symbol for a 4-input NAND gate. The
+inputs are ANDed, and the result is inverted. Therefore, the
+boolean equation is
+
+Y = ABCD (3-9)
+
+If you construct the truth table, you will have input words
+from 0000 to 1111. All words from 0000 through 1110
+produce a 1 output; only the word 1111 gives a 0 output.
+
+3-4 DE MORGAN’S SECOND
+THEOREM
+
+The proof of De Morgan’s second theorem is similar to the
+proof given for the first theorem. What follows is a brief
+explanation.
+
+The Second Theorem
+
+When two inputs are used, De Morgan’s second theorem
+says that
+AB=A+B
+
+2
+
+(3-10)
+
+In words, the complement of a product equals the sum of
+the complements. The left member of this equation repre-
+sents a NAND gate (Fig. 3-10a); the right member stands
+
+A—4
+Y Y
+>|
+fa} (b)
+
+—~) >-
+y
+8
+
+fc)
+Fig. 3-10 De Morgan’s second theorem: (@) NAND gate; (b) OR
+gate with inverted inputs; (c) bubbled or gate.
+
+ 
+
+Chapter 3 More Logic Gates 35
+
+ 
+ 
+
+for an OR gate with inverted inputs (Fig. 3-10b). Therefore,
+De Morgan’s second theorem boils down to the fact that
+
+Fig. 3-10a and b are equivalent.
+
+ 
+
++ -
+
+Fig. 3-11 De Morgan’s second theorem.
+
+ 
+
+ 
+
+ 
+
+Bubbled or Gate
+
+The circuit of Fig. 3-10b is so widely used that the
+abbreviated logic symbol of Fig. 3-10c has been adopted.
+From now on we will refer to Fig. 3-10c as a bubbled OR
+gate; the bubbles are a reminder of the inversion that takes
+place before ORing. -
+
+Figure 3-11 is a visual statement of De Morgan’s second
+theorem: a NAND gate and a bubbled.or gate are equivalent.
+This equivalence allows you to replace one circuit by the
+other whenever desired. This may lead to a simpler logic
+circuit or give you more insight into how the original circuit
+works. ‘
+
+More than Two Inputs
+
+When 3 inputs are involved, De Morgan’s second theorem
+is written
+
+C=A+Bi+C (3-11)
+If 4 inputs are used,
+ABCD =A+B+C+D (3-12)
+
+These equations say that the complement of a product
+equals the sum of the complements.
+
+bab
+
+Fig. 3-12 De Morgan’s second theorem: (a) 3-input circuits; (5)
+4-input circuits.
+
+LL |
+
+ 
+
+ 
+
+Figure 3-12 is a visual summary of the second theorem.
+Whether 3 or 4 inputs are involved, a NAND gate and a
+bubbled or gate are equivalent (interchangeable).
+
+36 Digital Computer Electronics
+
+ 
+
+EXAMPLE 3-2
+
+Prove that Fig. 3-13a and c are equivalent.
+
+LL V
+Lt
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+U1
+
+fa) (b}
+
+LLL
+
+2
+
+ 
+
+(3
+
+Fig. 3-13 Equivalent circuits.
+
+fe)
+
+SOLUTION
+
+ 
+
+Replace the final NAND gate in Fig. 3-13a@ by a bubbled oR
+gate. This gives Fig. 3-13. The double inversions cancel
+out, leaving the simplified circuit of Fig. 3-13c. Figure
+3-13a and c are therefore equivalent. Driven by the same
+inputs, either circuit produces the same output as the other.
+So if you’re loaded with NAND gates, build Fig. 3-13a. If
+your shelves are full of AND and oR gates, build Fig.
+3-13c.
+
+Incidentally, most people find Fig. 3-13 easier to analyze
+than Fig. 3-13a. For this reason, if you build Fig. 3-13a,
+draw the circuit like Fig. 3-13b. Anyone who sees Fig.
+3-13b on a schematic diagram knows that the bubbled OR
+gate is the same as a NAND gate and that the built-up circuit
+is two NAND gates working into a NAND gate.
+
+ 
+
+EXAMPLE 3-3
+
+Figure 3-14 shows a circuit called a control matrix. At first,
+it looks complicated, but on closer inspection it is relatively
+simple because of the repetition of NAND gates. De Morgan’s
+theorem tells us that NAND gates driving NAND gates are
+equivalent to AND gates driving OR gates.
+
+The upper set of inputs T, to J, are called timing signals;
+only one of them is high at a time. 7, goes high first, then
+T,, then 73, and so on. These signals control the rate and
+sequence of computer operations.
+
+The lower set of inputs LDA, ADD, SUB, and OUT are
+computer instructions; only one of them is high at a time.
+The outputs Cp, Ep, Ly, ..., to Lo control different
+registers in the computer.
+
+Answer the following questions about the contro] matrix:
+
+a. Which outputs are high when 7, is high?
+b. If 7, and LDA are high, which outputs are high?
+c. When 7, and SUB are high, which outputs are high?
+T% 7T, T3 T Ts To
+
+LDA
+AD.
+SU,
+OUT
+
+  
+
+Cp Ep Ly Ep
+
+Fig. 3-14 Control matrix.
+
+SOLUTION
+
+ 
+
+a. Visualize T, high. You can quickly check out each
+gate and realize that Ep and Ly are the only high
+outputs.
+
+b. This time 7, and LDA are high. Check each gate and
+you can see that Ly, and E, are the only high outputs.
+
+c. When T, and SUB are high, the high outputs are L,,
+Sy, and Ey.
+
+ 
+
+3-5 EXCLUSIVE-OR GATES
+
+An OR gate recognizes words with one or more Is. The
+EXCLUSIVE-OR gate is different; it recognizes only words
+that have an odd number of Is.
+
+Two Inputs
+
+Figure 3-15a shows one way to build an EXCLUSIVE-OR
+gate, abbreviated xoR. The upper AND gate forms the
+product AB, and the lower AND gate gives AB. Therefore,
+the boolean equation is
+
+Y =AB + AB (3-13)
+
+    
+
+SU Ey Lg Lo
+
+ 
+
+(b}
+Fig. 3-15 (a) EXCLUSIVE-oR gate. (b) A 2-input EXCLUSIVE-OR
+gate.
+
+Here’s what the circuit does. In Fig. 3-15a two low
+inputs mean both AND gates have low outputs; so the final
+output is low. If A is low and B is high, the upper AND
+gate has a high output; therefore, the final output is high.
+Likewise, a high A and low B result in a final output that
+is high. If both inputs are high, both AND gates have low
+outputs and the final output is low.
+
+Table 3-7 shows the truth table for a 2-input EXCLUSIVE-
+OR gate. The output is high when A or B is high but not
+both; this is why the circuit is known as an EXCLUSIVE-OR
+gate. In other words, the output is a 1 only when the inputs
+are different.
+
+Chapter 3 More Logic Gates 37
+
+ 
+
+ 
+TABLE 3-7. TWO-
+
+INPUT xor GATE
+A B\| AB+ AB
+0 0 0
+0 1 1
+1 0 1
+1 1 0
+
+ 
+
+Logic Symbol and Boolean Sign
+
+Figure 3-150 is the standard symbol for a 2-input Xor gate.
+Whenever you see this symbol, remember the action: the
+inputs must be different to get a high output.
+A word equation for Fig. 3-156 is
+
+Y = AxorB (3-14)
+In boolean algebra the sign @ stands for xor addition.
+This means that Eq. 3-14 can be written
+
+Y=AQB (3-15)
+Read this as ‘‘Y equals A xor B.”’
+
+Given the inputs, you can substitute and solve for the
+output. For instance, if both inputs are low,
+
+Y=0@0=0
+
+because 0 xored with 0 gives 0. If one input is low and
+the other high,
+
+Yy=0@1=1
+
+because 0 xORed with | produces 1. And so on.
+Here’s a summary of the four possible xor additions:
+
+0@0=0
+o@1=1
+1@o=1
+1@1=0
+
+Remember these four results; we will be using XorR addition
+when we get to arithmetic circuits.
+
+Four Inputs
+
+In Fig. 3-16a the upper gate produces A @ B, while the
+lower gate gives C @ D. The final gate xors both of these
+sums to get
+
+Y¥=AGOBOCOD) (3-16)
+
+38 Digital Computer Electronics
+
+ 
+
+oO B&B b
+
+ 
+
+(b)
+
+Fig. 3-16 A 4-input EXCLUSIVE-oR gate: (@) circuit with 2-input
+XOR gates; (b) logic symbol.
+
+It’s possible to substitute input values into the equation and
+solve for the output. For instance, if A through C are low
+and D is high,
+
+Y¥=O0O0OOO)
+=0@1
+=1
+
+One way to get the truth table is to plow through all the
+input possibilities.
+
+Alternatively, you can analyze Fig. 3-16a as follows. If
+all inputs are Os, the first two gates have 0 outputs; so the
+final gate has a 0 output. If A to C are 0s and D isa 1, the
+upper gate has a 0 output, the lower gate has a 1 output,
+and the final gate has a | output. In this way, you can
+analyze the circuit action for all input words.
+
+Table 3-8 summarizes the action. Here is an important
+property: each input word with an odd number of Is
+produces a 1 output. For instance, the first input word to
+produce a 1 output is 0001; this word has an odd number
+of 1s. The next word with a 1 output is 0010; again an odd
+number of ls. A 1 output also occurs for these words:
+O100, 0111, 1000, 1011, 1101, and 1110, all of which
+have an odd number of 1s.
+
+The circuit of Fig. 3-16a recognizes words with an odd
+number of 1s; it disregards words with an even number of
+1s. Figure 3-16a is a 4-input xor gate. In this book, we
+will use the abbreviated symbol of Fig. 3-165 to represent
+a 4-input xor gate. When you see this symbol, remember
+the action: the circuit recognizes words with an odd number
+of Is.
+
+Any Number of Inputs
+
+Using 2-input xor gates as building blocks, we can make
+XOR gates with any number of inputs. For example, Fig.
+TABLE 3-8. FOUR-INPUT
+XOR GATE
+
+ 
+
+Comment
+
+ 
+
+Even
+Odd
+Odd
+Even
+Odd
+Even
+Even
+Odd
+Odd
+Even
+Even
+Odd
+Even
+Odd
+Odd
+Even
+
+KEE eRe re REP ODOC OOCO oO].
+
+HH eR coco HHH occ] &
+i
+
+TT POR R OATH OO =— IS a
+i
+
+mOrOF OH OK ORF ORF OF ol]t
+
+OeKroHoterRogHoHro|™
+1 .
+d
+
+ 
+
+ 
+
+ 
+
+-
+
+fa} (b}
+Fig. 3-17 xor gates: (a) 3-input; (5) 6-input.
+
+3-17a shows the abbreviated symbol for a 3-input xoR gate,
+and Fig. 3-17b is the symbol for a 6-input xoR gate. The
+final output of any xor gate is the xoR sum of the inputs:
+
+Y=AQ@QBOQOC::: (3-17)
+What you have to remember for practical work is this:
+
+an XOR gate, no matter how many inputs, recognizes only
+words with an odd number of Is.
+
+Parity
+
+Even parity means a word has an even number of Is. For
+instance, 110011 has even parity because it contains four
+1s. Odd parity means a word has an odd number of Is. As
+an example, 110001 has odd parity because it contains
+three Is.
+
+Here are two more examples:
+
+1111 0000 1111 0011
+1111 0000 11110111
+
+(Even parity)
+(Odd parity)
+
+The first word has even parity because it contains ten 1s;
+the second word has odd parity because it contains eleven
+Is.
+
+XOR gates are ideal for testing the parity of a word. XOR
+gates recognize words with an odd number of Is. Therefore,
+even-parity words produce a low output and odd-parity
+words produce a high output.
+
+ 
+
+EXAMPLE 3-4
+
+What is the output of Fig. 3-18 for each of these input
+words?
+
+a. 1010 1100 1000 1100
+
+b. 1010 1100 1000 1101
+
+16 bits
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ODD
+Fig. 3-18 Odd-parity tester.
+
+SOLUTION
+
+ 
+
+a. The word has seven Is, an odd number. Therefore,
+the output signal is
+
+ODD =1__
+b. The word has eight 1s, an even number. Now
+
+ODD = 0
+This is an example of an odd-parity tester. An even-
+parity word produces a low output. An odd-parity word
+results in a high output.
+
+ 
+
+EXAMPLE 3-5
+
+The 7-bit register of Fig. 3-19 stores the letter A in ASCII
+form. What does the 8-bit output word equal?
+
+Chapter 3 More Logic Gates 39
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+7-bit register
+As As Ag A; Ay A, Ao
+>
+ped
+Odd-parity ‘ Y 4
+bit Instruction or data bits
+x ”)
+
+ 
+
+8-bit word with odd parity
+Fig. 3-19 Odd-parity generator.
+
+SOLUTION
+
+ 
+
+The ASCII code for letter A is
+100 0001
+
+(see Table 1-6 for the ASCII code). This word has an even
+parity, which means that the xoR gate has a 0 output.
+Because of the inverter, the overall output of the circuit is
+the 8-bit word
+
+1100 0001
+
+Notice that this has odd parity.
+
+The circuit is called an odd-parity generator because it
+produces an 8-bit output word with odd parity. If the register
+word has even parity, 0 comes out of the xor gate and the
+odd-parity bit is 1. On the other hand, if the register word
+has odd parity, a | comes out of the xor gate and the odd-
+parity bit is 0. No matter what the register contents, the
+odd-parity bit and the register bits form a new 8-bit word
+that has odd parity.
+
+What is the practical application? Because of transients,
+noise, and other disturbances, |-bit errors sometimes occur
+in transmitted data. For instance, the letter A may be
+transmitted over phone lines in ASCII form:
+
+100 0001 (A)
+
+Somewhere along the line, one of the bits may be changed.
+If the X, bit changes, the received data will be
+
+100 0011 (C)
+
+40 Digital Computer Electronics
+
+Because of the 1-bit error, we receive letter C when letter
+A was actually sent.
+
+One solution is to transmit an odd-parity bit along with
+the data word and have an xoR gate test each received
+word for odd parity. For instance, with a circuit like Fig.
+3-19 the letter A would be transmitted as
+
+1100 0001
+
+An XOR gate will test this word when it is received. If no
+error has occurred, the xor gate will recognize the word.
+On the other hand, if a 1-bit error has crept in, the xOR
+gate will disregard the received word and the data can be
+rejected.
+
+A final point. When errors come, they are usually 1-bit
+errors. This is why the method described catches most of
+the errors in transmitted data.
+
+ 
+
+EXAMPLE 3-6
+What does the circuit of Fig. 3-20 do?
+
+ 
+
+A
+INVERT
+Y
+Fig. 3-20
+SOLUTION
+When INVERT = OandA = 0,
+Y=0@0=0
+When INVERT = OandA = 1,
+Y=0@1=1
+
+In either case, the output is the same as A; that is,
+Y=A
+
+for a low INVERT signal.
+On the other hand, when INVERT = 1 and A = QO,
+
+Y=1@0=1
+
+When INVERT = 1 andA = 1,
+
+lI
+o
+
+Y¥=1@1
+This time, the output is the complement of A. As an
+equation,
+
+Y=A
+
+for a high INVERT signal.
+
+To summarize, the circuit of Fig. 3-20 does either of
+two things. It transmits A when INVERT is 0 and A when
+INVERT is 1.
+
+ 
+
+3-6 THE CONTROLLED INVERTER
+
+The preceding example suggests the idea of a controlled
+inverter, a circuit that transmits a binary word or its /’s
+complement.
+
+The 1’s Complement
+
+Complement each bit in a word and the new word you get
+is the 1’s complement. For instance, given
+
+1100 0111
+the 1’s complement is
+0011 1000
+
+Each bit in the original word is inverted to get the 1’s
+complement.
+
+The Circuit
+
+The xor gates of Fig. 3-21 form a controlled inverter
+(sometimes called a programmed inverter). This circuit can
+transmit the register contents or the 1’s complement of the
+
+register contents. As demonstrated in Example 3-6, each
+XOR gate acts like this. A low INVERT results in
+
+and a high INVERT gives
+(Y, = A, v
+
+So each bit is either transmitted or inverted before reaching
+the final output.
+
+Visualize the register contents as a word A,Ag +: - Ao
+and the final output as a word YjY,-- - Yo. Then a low
+INVERT means
+
+YoYe°°* Yo = AjAg + + + Ag
+On the other hand, a high INVERT results in
+YiY6°°* Yo = A7Ag: ++ Ao
+As a concrete example, suppose the register word is
+AjAg + + + Ao = 1110 0110
+Then, a low INVERT gives an output word of
+YxYe°°° Yo = 1110 0110
+and a high INVERT produces
+Y7Ye°°* Yo = 0001 1001
+The controlled inverter of Fig. 3-21 is important. Later
+you will see how it is used in solving arithmetic and logic
+
+problems. For now, all you need to remember is the key
+idea. The output word from a controlled inverter equals the
+
+ 
+
+8-bit register
+
+ 
+
+ 
+
+ 
+
+@ 2 2
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Fig. 3-21 Controlled inverter.
+
+ 
+
+INVERT
+
+ 
+
+ 
+
+Chapter 3 More LogicGates 41
+
+ 
+ 
+
+input word when INVERT is low; the output word equals
+the 1’s complement when JNVERT is high.
+
+Boldface Notation
+
+After you understand an idea, it simplifies discussions and
+equations if you use a symbol, letter, or other sign to
+represent the idea. From now on, boldface letters will stand
+for binary words.
+
+For instance, instead of writing
+
+A7Ag sof Ao = 1110 0110
+we can write
+
+A = 11100110
+
+Likewise, instead of
+Y7Y¥6°°° Yo = 0001 1001
+the simpler equation
+Y¥Y = 0001 1001
+
+can be used.
+
+This is another example of chunking. We are replacing
+long strings like AjAg - +: Ag and Y7Y,° °° Yo by A and
+Y. This chunked notation will be convenient when we get
+to computer analysis.
+
+This is how to summarize the action of a controlled
+
+inverter:
+A
+Y= {&
+
+(Note: A boldface letter with an overbar means that each
+bit in the word is complemented; if A is a word, A is its
+1’s complement.)
+
+when INVERT = 0
+when INVERT = |
+
+3-7 EXCLUSIVE-NOR GATES
+
+The EXCLUSIVE-NOR gate, abbreviated xNoR, is logically
+equivalent to an XOR gate followed by an inverter. For
+example, Fig. 3-22a shows a 2-input XNOR gate. Figure
+3-22b is an abbreviated way to draw the same circuit.
+
+A A
+Y Y
+B B
+
+fa) (b)
+Fig. 3-22 A 2-input xNor gate: (a) circuit; (b) abbreviated symbol.
+
+42 Digital Computer Electronics
+
+TABLE 3-9.
+TWO-INPUT
+XNOR GATE
+
+-rFP OO >
+Fe oro|s
+
+ 
+
+Because of the inversion on the output side, the truth
+table of an XNOR gate is the complement of an xoR truth
+table. As shown in Table 3-9, the output is high when the
+inputs are the same. For this reason, the 2-input XNOR gate
+is ideally suited for bit comparison, recognizing when two
+input bits are identical. (Example 3-7 tells you more about
+bit comparison.)
+
+>
+
+fa} (b)
+Fig. 3-23 xNor gates: (a) 3-input; (b) 4-input.
+
+Figure 3-23a is the symbol for a 3-input XNOR gate, and
+Fig. 3-230 is the 4-input XNoR gate. Because of the inversion
+on the output side, these XNOR gates perform the comple-
+mentary function of XOR gates. Instead of recognizing odd-
+parity words, XNOR gates recognize even-parity words.
+
+ 
+
+EXAMPLE 3-7
+What does the circuit of Fig. 3-24 do?
+
+SOLUTION
+
+ 
+
+The circuit is a word comparator; it recognizes two identical
+words. Here is how it works. The leftmost XNOR gate
+compares A, and B,; if they are the same, Ys; is a 1. The
+second XNOR gate compares A, and B,; if they are the same,
+Y, is a 1. In turn, the remaining xNoR gates compare the
+bits that are left, producing a 1 output for equal bits and a
+0 output for unequal bits.
+
+If the words A and B are identical, all XxNOR gates have
+high outputs and the AND gate has a high EQUAL. If words
+A and B differ in one or more bit positions, the AND gate
+has a low EQUAL.
+
+ 
+A register
+
+EQUAL
+Fig. 3-24 Word comparator.
+
+ 
+
+B register
+>
+
+GLOSSARY
+
+controlled inverter This circuit produces the 1’s comple-
+ment of the input word. One application is binary subtrac-
+tion. It is sometimes called a programmed inverter.
+
+De Morgan’s theorems The first theorem says that a NOR
+gate is equivalent to a bubbled AND gate. The second
+theorem says that a NAND gate is equivalent to a bubbled
+OR gate.
+
+even parity An even number of Is in a binary word.
+NAND gate Equivalent to an AND gate followed by an
+inverter. All inputs must be high to get a low output.
+NOR gate Equivalent to an or gate followed by an inverter.
+Ali inputs must be low to get a high output.
+
+odd parity An odd number of Is in a binary word.
+parity generator A circuit that produces either an odd- or
+even-parity bit to go along with the data.
+
+XNOR gate Equivalent to an EXCLUSIVE-OR gate followed
+by an inverter. The output is high only when the input word
+has even parity.
+
+XOR gate An EXCLUSIVE-OR gate. It has a high output
+only when the input word has odd parity. For a 2-input
+XOR gate, the output is high only when the inputs are
+different.
+
+SELF-TESTING REVIEW
+
+ 
+
+Read each of the following and provide the missing words.
+Answers appear at the beginning of the next question.
+
+1. A NoR gate has two or more input signals. All inputs
+must be to get a high output. A NOR
+gate recognizes only the input word whose bits are
+
+. The Nor gate is logically equivalent to
+an OR gate followed by an —___.
+
+2. (low, Os, inverter) De Morgan’s first theorem says
+that a NOR gate is equivalent to a bubbled
+gate.
+
+3. (AND) A NAND gate is equivalent to an AND gate
+followed by an inverter. All inputs must be
+
+to get a low output. De Morgan’s second theorem
+says that a NAND gate is equivalent to a bubbled
+gate.
+
+4. (high, or) An xor gate recognizes only words with
+an ________ number of Is. The 2-input xor gate
+has a high output only when the input bits are
+
+. XOR gates are ideal for testing parity
+because even-parity words produce a
+output and odd-parity words produce a
+output.
+
+5. (odd, different, low, high) An odd-parity generator
+produces an odd-parity bit to go along with the data.
+
+Chapter 3 More Logic Gates 43
+
+ 
+ 
+
+The parity of the transmitted data is ___. An
+XOR gate can test each received word for parity,
+rejecting words with parity.
+
+6. (odd, even) A controlled inverter is a logic circuit
+that transmits a binary word or its ________ com-
+plement.
+
+7. (1’s) The EXCLUSIVE-NOR gate is equivalent to an
+XOR gate followed by an inverter. Because of this,
+even-parity words produce a high output.
+
+PROBLEMS
+
+ 
+
+3-1. In Fig. 3-25a the two inputs are connected to-
+gether. If A is low, what is Y? If A is high, what
+is Y? Does the circuit act like a noninverter or an
+inverter?
+
+Fig. 3-25
+
+3-2. What is the output in Fig. 3-25 if both inputs are
+low? If one is low and the other high? If both are
+high? Does the circuit act like an OR gate or an
+AND gate?
+
+3-3. Figure 3-26 shows a NoR-gate crossbar switch. If
+all X and Y inputs are high, which of the Z
+outputs is high? If all inputs are high except X,
+and ¥,, which Z output is high? If X, and ¥y are
+low and all other inputs are high, which Z output
+is high?
+
+3-4. In Fig. 3-26, you want Z, to be 1 and all other Z
+outputs to be 0. What values must the X and Y
+inputs have?
+
+3-5. The outputs in Fig. 3-27 are cross-coupled back
+to the inputs of the Nor gates. If R = 0 and S =
+1, what do Q and Q equal?
+
+aR ‘
+a}
+
+‘
+
+is
+
+oO}
+
+Fig. 3-27 Cross-coupled Nor gates.
+
+3-6. If R = 1 and S = 0 in Fig. 3-27, what does Q
+equal? Q?
+
+3-7. Prove that Fig. 3-28a and b are equivalent.
+
+3-8. What is the output in Fig. 3-28q if all inputs are
+Os. If all inputs are 1s?
+
+3-9. What is the output in Fig. 3-285 if all inputs are
+Os. If all inputs are 1s?
+
+3-10. A NOR has 6 inputs. How many input words are
+in its truth table? What is the only input word that
+produces a | output?
+
+3-11. In Fig. 3-28a how many input words are there in
+the truth table?
+
+3-12. What is the output in Fig. 3-29 if all inputs are
+low? If all inputs are high?
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Xo ° -»
+a ? +
+
+Fig. 3-26 Nor-gate crossbar switch.
+
+44 Digital Computer Electronics
+
+ 
+
