@@ -1,7 +1,11 @@
 package models
 
 import (
+	"fmt"
 	"github.com/uadmin/uadmin"
+	"github.com/unidoc/unioffice/document"
+	"github.com/unidoc/unioffice/presentation"
+	"github.com/unidoc/unioffice/spreadsheet"
 	"io/ioutil"
 	"os/exec"
 	"path/filepath"
@@ -20,6 +24,18 @@ func (Format) TXT() Format {
 
 func (Format) HTML() Format {
 	return 3
+}
+
+func (Format) DOCX() Format {
+	return 4
+}
+
+func (Format) XLSX() Format {
+	return 5
+}
+
+func (Format) PPTX() Format {
+	return 6
 }
 
 func (f *Format) GetRawText(doc *DocumentVersion) string {
@@ -65,6 +81,55 @@ func (f *Format) GetRawText(doc *DocumentVersion) string {
 	if *f == f.HTML() {
 		// Strip tags
 		return ""
+	}
+	if *f == f.DOCX() {
+		doc, _ := document.Open(strings.TrimPrefix(doc.File, "/"))
+		buf := ""
+		for _, para := range doc.Paragraphs() {
+			for _, run := range para.Runs() {
+				buf += run.Text() + " "
+			}
+		}
+		return buf
+	}
+	if *f == f.XLSX() {
+		excel, _ := spreadsheet.Open(strings.TrimPrefix(doc.File, "/"))
+		buf := ""
+		for _, sheet := range excel.Sheets() {
+			for col := 'A'; col <= 'Z'; col++ {
+				for row := 1; row < 100; row++ {
+					ref := string(col) + fmt.Sprint(row)
+					if sheet.Cell(ref).GetString() != "" {
+						buf += sheet.Cell(ref).GetString() + " "
+					}
+				}
+
+			}
+			//uadmin.Trail(uadmin.DEBUG, buf)
+			return buf
+
+		}
+	}
+	if *f == f.PPTX() {
+		pres, _ := presentation.Open("/home/ubuntu/Documents/test.pptx")
+		buf := ""
+		_ = buf
+		for _, slide := range pres.Slides() {
+			fmt.Println("slide")
+			for _, box := range slide.PlaceHolders() {
+				if box.X() == nil || box.X().TxBody == nil {
+					continue
+				}
+				for _, para := range box.X().TxBody.P {
+					if para == nil {
+						continue
+					}
+					for _, run := range para.EG_TextRun {
+						uadmin.Trail(uadmin.DEBUG, run)
+					}
+				}
+			}
+		}
 	}
 	return ""
 }

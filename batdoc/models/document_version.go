@@ -10,11 +10,12 @@ type DocumentVersion struct {
 	uadmin.Model
 	Document   Document
 	DocumentID uint
+	Name       string
 	File       string `uadmin:"file"`
 	Number     int    `uadmin:"help:version number"`
 	Date       time.Time
 	Format     Format
-	RawText    string `uadmin:"list_exclude;hidden" sql:"type:text;"`
+	RawText    string `uadmin:"list_exclude;read_only" sql:"type:text;"`
 }
 
 func (d DocumentVersion) String() string {
