@@ -2,14 +2,16 @@ package models
 
 import (
 	"fmt"
-	"github.com/uadmin/uadmin"
-	"github.com/unidoc/unioffice/document"
-	"github.com/unidoc/unioffice/presentation"
-	"github.com/unidoc/unioffice/spreadsheet"
 	"io/ioutil"
 	"os/exec"
 	"path/filepath"
 	"strings"
+
+	"github.com/unidoc/unioffice/presentation"
+
+	"github.com/uadmin/uadmin"
+	"github.com/unidoc/unioffice/document"
+	"github.com/unidoc/unioffice/spreadsheet"
 )
 
 type Format int
@@ -68,6 +70,7 @@ func (f *Format) GetRawText(doc *DocumentVersion) string {
 		}
 		return string(buf)
 	}
+
 	if *f == f.TXT() { // Text
 		// Read file
 		filePath := strings.TrimPrefix(doc.File, "/")
@@ -78,10 +81,12 @@ func (f *Format) GetRawText(doc *DocumentVersion) string {
 		}
 		return string(buf)
 	}
+
 	if *f == f.HTML() {
 		// Strip tags
 		return ""
 	}
+
 	if *f == f.DOCX() {
 		doc, _ := document.Open(strings.TrimPrefix(doc.File, "/"))
 		buf := ""
@@ -92,6 +97,7 @@ func (f *Format) GetRawText(doc *DocumentVersion) string {
 		}
 		return buf
 	}
+
 	if *f == f.XLSX() {
 		excel, _ := spreadsheet.Open(strings.TrimPrefix(doc.File, "/"))
 		buf := ""
@@ -105,31 +111,40 @@ func (f *Format) GetRawText(doc *DocumentVersion) string {
 				}
 
 			}
-			//uadmin.Trail(uadmin.DEBUG, buf)
 			return buf
-
 		}
 	}
+
 	if *f == f.PPTX() {
-		pres, _ := presentation.Open("/home/ubuntu/Documents/test.pptx")
-		buf := ""
-		_ = buf
+		// Using Python but cannot pass the value to Go
+		// python.Initialize()
+		// python.PyRun_SimpleString("from pptx import Presentation\nprs = Presentation('." + doc.File + "')\ntext_runs = []\nfor slide in prs.slides:\n\tfor shape in slide.shapes:\n\t\tif not shape.has_text_frame: continue\n\t\tfor paragraph in shape.text_frame.paragraphs:\n\t\t\tfor run in paragraph.runs: text_runs.append(run.text)\nprint text_runs")
+		// python.Finalize()
+
+		// For .pptx only. Not working with other powerpoint extension.
+		pres, _ := presentation.Open(strings.TrimPrefix(doc.File, "/"))
 		for _, slide := range pres.Slides() {
-			fmt.Println("slide")
-			for _, box := range slide.PlaceHolders() {
-				if box.X() == nil || box.X().TxBody == nil {
-					continue
-				}
-				for _, para := range box.X().TxBody.P {
-					if para == nil {
+			for _, c := range slide.X().CSld.SpTree.Choice {
+				// Shape
+				for _, sp := range c.Sp {
+					if sp.TxBody == nil {
 						continue
 					}
-					for _, run := range para.EG_TextRun {
-						uadmin.Trail(uadmin.DEBUG, run)
+					// Paragraph
+					for _, para := range sp.TxBody.P {
+						if para == nil {
+							continue
+						}
+						// Run
+						for _, run := range para.EG_TextRun {
+							uadmin.Trail(uadmin.DEBUG, run.R.T)
+						}
 					}
 				}
 			}
 		}
 	}
+
 	return ""
+
 }
