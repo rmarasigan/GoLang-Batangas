@@ -2,9 +2,10 @@ package models
 
 import (
 	"fmt"
-	"github.com/uadmin/uadmin"
 	"strings"
 	"time"
+
+	"github.com/uadmin/uadmin"
 )
 
 type Document struct {
